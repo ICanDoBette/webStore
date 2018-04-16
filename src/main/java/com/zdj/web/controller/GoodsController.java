@@ -34,4 +34,10 @@ public class GoodsController {
         GoodCommentModel goodCommentModel = goodsService.getGoodConmment(Integer.parseInt(values.get("id")));
         return JSONObject.toJSONString(goodCommentModel);
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/addShopCar", method = {RequestMethod.GET, RequestMethod.POST})
+    public String addShopCar(@RequestBody Map<String, String> values) {
+        return "{\"msg\":\"ok\",\"count\":\"1\"}";
+    }
 }

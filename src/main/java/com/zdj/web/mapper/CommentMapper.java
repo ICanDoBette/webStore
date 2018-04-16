@@ -1,5 +1,6 @@
 package com.zdj.web.mapper;
 
+import com.zdj.web.model.CommentsModel;
 import com.zdj.web.pojo.Comment;
 import com.zdj.web.pojo.CommentExample;
 import org.apache.ibatis.annotations.Param;
@@ -29,4 +30,6 @@ public interface CommentMapper {
     int updateByPrimaryKeySelective(Comment record);
 
     int updateByPrimaryKey(Comment record);
+
+    List<CommentsModel> selectCommentsById(@Param("goodId")int goodId);
 }

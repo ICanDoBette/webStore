@@ -22,14 +22,14 @@
         <span style="color:#FF0000; font-size:30px; float:left">{{count}}</span>
       </div>
       <div style="padding:3px;" v-if="isLogin">
-        <div style="float:left; height:40px; width:135px; background:#FFD9BC; border:solid 1px #F0CAB6;cursor:pointer;">
+        <div @click="buy" style="float:left; height:40px; width:135px; background:#FFD9BC; border:solid 1px #F0CAB6;cursor:pointer;">
           <div style="height:8px"></div>
           <center>
             <font color="#E5511D">立即购买</font>
           </center>
         </div>
         <div style="float:left; width:8px;">&nbsp;</div>
-        <div style="float:left; height:40px; width:150px; background:#F22D00;cursor:pointer; ">
+        <div @click="addShopCar" style="float:left; height:40px; width:150px; background:#F22D00;cursor:pointer; ">
           <div style="height:8px"></div>
           <center>
             <font color="#FFFFFF">加入购物车</font>
@@ -81,6 +81,7 @@
       <div style="width:1000px; float:left; background-color:#CCCCCC" v-else v-html="information">
       </div>
     </div>
+
   </div>
 </template>
 
@@ -88,7 +89,7 @@
   import Counter from '../components/base/counter'
   export default {
     created: function () {
-      this.$http.post('/goods/detail',{'id':this.id}).then((res) => {
+      this.$http.post('/goods/detail',{'id':this.$route.params.id}).then((res) => {
         this.id = res.data.id
         this.name = res.data.name
         this.picturePath = res.data.picturePath
@@ -100,14 +101,16 @@
       }, (err) => {
         console.log(err)
       })
-      this.$http.post('/goods/comment',{'id':this.id}).then((res) => {
+      this.$http.post('/goods/comment',{'id':this.$route.params.id}).then((res) => {
         this.avg = res.data.avg
         this.comments =res.data.comments
       }, (err) => {
         console.log(err)
       })
     },
-    components: {Counter},
+    components: {
+      Counter:Counter,
+    },
     data() {
       return {
         id: 0,
@@ -137,7 +140,8 @@
           }
         ],
         commentHeader1:'commentHeaderCheckBackground',
-        commentHeader2:'commentHeaderUnCheckBackground'
+        commentHeader2:'commentHeaderUnCheckBackground',
+        Msg:''
       }
     }, methods: {
       changedBuy(val){
@@ -148,6 +152,28 @@
         }else{
           this.isComment=true
         }
+      },buy(){
+        this.$http.post('/goods/addShopCar',{'id':this.id,'buyNum':this.buyNum}).then((res) => {
+           if(res.data.msg!='ok'){
+             this.count=res.data.count
+             this.$emit('onOperateChrild',res.data.msg,true)
+            }else{
+              this.$router.push({name: '/buy/'+ res.data.shopCarId})
+            }
+        }, (err) => {
+          console.log(err)
+        })
+      },addShopCar(){
+        this.$http.post('/goods/addShopCar',{'id':this.id,'buyNum':this.buyNum}).then((res) => {
+          if(res.data.msg!='ok'){
+            this.count=res.data.count
+            this.$emit('onOperateChrild',res.data.msg,true)
+          }else{
+            this.$emit('onOperateChrild','添加成功，商品在购物车哦亲~',true)
+          }
+         }, (err) => {
+          console.log(err)
+         })
       }
     },props:{
       'isLogin':[Boolean]

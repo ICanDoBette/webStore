@@ -22,9 +22,9 @@
     </div>
     <div class="app-content">
       <keep-alive>
-        <router-view v-if="$route.meta.keepAlive" :isLogin="loginModel.isLogin"></router-view>
+        <router-view v-if="$route.meta.keepAlive" @onOperateChrild="operateChrild" :isLogin="loginModel.isLogin"></router-view>
       </keep-alive>
-      <router-view v-if="!$route.meta.keepAlive" :isLogin="loginModel.isLogin"></router-view>
+      <router-view v-if="!$route.meta.keepAlive" @onOperateChrild="operateChrild" :isLogin="loginModel.isLogin"></router-view>
     </div>
     <div class="app-foot">
       <p>© 2016 fishenal MIT</p>
@@ -55,6 +55,9 @@
           <span>{{ registMessage }}</span>
         </font>
       </div>
+    </my-dialog>
+    <my-dialog :isShow="isShowChrildMsg" @on-close="operateChrild('',false)">
+      {{ Msg }}
     </my-dialog>
   </div>
 </template>
@@ -92,7 +95,9 @@
           id: -1,
           name: '',
           isLogin: false
-        }
+        },
+        Msg:'',
+        isShowChrildMsg:false
       }
     }, methods: {
       regist(){
@@ -163,6 +168,14 @@
           }
         }, (err) => {
         })
+      },operateChrild(val,isOpen){
+        if (isOpen){
+          this.Msg=val
+          this.isShowChrildMsg=true
+        }else{
+          this.Msg=''
+          this.isShowChrildMsg=false
+        }
       }
     }
   }

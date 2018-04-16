@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+@Repository
 public interface GoodsMapper {
     long countByExample(GoodsExample example);
 
