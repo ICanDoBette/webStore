@@ -288,4 +288,11 @@
       is_delete = #{isDelete,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectCommentsById" resultType="com.zdj.web.model.CommentsModel">
+    SELECT name , star , comment
+    FROM comment , user
+    WHERE user.is_delete = '0'
+    AND comment.good_id = #{goodId,jdbcType=INTEGER}
+    AND comment.user_id=user.id
+  </select>
 </mapper>

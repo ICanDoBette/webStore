@@ -154,7 +154,7 @@
         }
       },buy(){
         this.$http.post('/goods/addShopCar',{'id':this.id,'buyNum':this.buyNum}).then((res) => {
-           if(res.data.msg!='ok'){
+           if(res.data.msg!='ok' && res.data.shopCarId!=-1){
              this.count=res.data.count
              this.$emit('onOperateChrild',res.data.msg,true)
             }else{
@@ -166,7 +166,9 @@
       },addShopCar(){
         this.$http.post('/goods/addShopCar',{'id':this.id,'buyNum':this.buyNum}).then((res) => {
           if(res.data.msg!='ok'){
-            this.count=res.data.count
+            if(res.data.count!=-1) {
+              this.count = res.data.count
+            }
             this.$emit('onOperateChrild',res.data.msg,true)
           }else{
             this.$emit('onOperateChrild','添加成功，商品在购物车哦亲~',true)

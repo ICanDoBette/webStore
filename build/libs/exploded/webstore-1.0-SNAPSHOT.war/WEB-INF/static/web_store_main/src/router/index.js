@@ -7,6 +7,7 @@ import DetailCountPage from '../pages/detail/count.vue'
 import DetailForecastPage from '../pages/detail/forecast.vue'
 import DetailPublishPage from '../pages/detail/publish.vue'
 import News from '../pages/news.vue'
+import Goods from '../pages/goods.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +44,10 @@ export default new Router({
       path: '/news/:id',
       component: News,
       meta: {keepAlive: false}
+    },{
+      path: '/goods/:id',
+      component: Goods,
+      meta: {keepAlive: true}
     }
   ]
 })

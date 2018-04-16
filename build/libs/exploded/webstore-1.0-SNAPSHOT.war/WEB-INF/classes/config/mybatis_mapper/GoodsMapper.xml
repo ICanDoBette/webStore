@@ -15,7 +15,8 @@
     <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
     <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zdj.web.pojo.Goods">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zdj.web.pojo.GoodsWithBLOBs">
+    <result column="picture_path" jdbcType="LONGVARCHAR" property="picturePath" />
     <result column="information" jdbcType="LONGVARCHAR" property="information" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -81,7 +82,7 @@
     update_time, update_user, is_delete
   </sql>
   <sql id="Blob_Column_List">
-    information
+    picture_path, information
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.zdj.web.pojo.GoodsExample" resultMap="ResultMapWithBLOBs">
     select
@@ -131,19 +132,20 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zdj.web.pojo.Goods">
-    insert into goods (id, name, big_type, 
+  <insert id="insert" parameterType="com.zdj.web.pojo.GoodsWithBLOBs">
+    insert into goods (id, name,picture_path, big_type,
       small_type, count, price, 
       is_down, create_time, create_user, 
       update_time, update_user, is_delete, 
       information)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{bigType,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},#{picturePath,jdbcType=LONGVARCHAR}
+      #{bigType,jdbcType=INTEGER},
       #{smallType,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, #{price,jdbcType=INTEGER}, 
       #{isDown,jdbcType=TINYINT}, #{createTime,jdbcType=DATE}, #{createUser,jdbcType=VARCHAR}, 
       #{updateTime,jdbcType=DATE}, #{updateUser,jdbcType=VARCHAR}, #{isDelete,jdbcType=TINYINT}, 
       #{information,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zdj.web.pojo.Goods">
+  <insert id="insertSelective" parameterType="com.zdj.web.pojo.GoodsWithBLOBs">
     insert into goods
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -151,6 +153,9 @@
       </if>
       <if test="name != null">
         name,
+      </if>
+      <if test="picturePath != null">
+        picture_path,
       </if>
       <if test="bigType != null">
         big_type,
@@ -192,6 +197,9 @@
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="picturePath != null">
+        #{picturePath,jdbcType=LONGVARCHAR},
       </if>
       <if test="bigType != null">
         #{bigType,jdbcType=INTEGER},
@@ -243,6 +251,9 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
+      <if test="record.picturePath != null">
+        picture_path = #{record.picturePath,jdbcType=LONGVARCHAR},
+      </if>
       <if test="record.bigType != null">
         big_type = #{record.bigType,jdbcType=INTEGER},
       </if>
@@ -285,6 +296,7 @@
     update goods
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
+      picture_path = #{record.picturePath,jdbcType=LONGVARCHAR},
       big_type = #{record.bigType,jdbcType=INTEGER},
       small_type = #{record.smallType,jdbcType=INTEGER},
       count = #{record.count,jdbcType=INTEGER},
@@ -318,11 +330,14 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zdj.web.pojo.Goods">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zdj.web.pojo.GoodsWithBLOBs">
     update goods
     <set>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="picturePath != null">
+        picture_path = #{picturePath,jdbcType=LONGVARCHAR},
       </if>
       <if test="bigType != null">
         big_type = #{bigType,jdbcType=INTEGER},
@@ -360,9 +375,10 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zdj.web.pojo.Goods">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zdj.web.pojo.GoodsWithBLOBs">
     update goods
     set name = #{name,jdbcType=VARCHAR},
+      picture_path = #{picturePath,jdbcType=LONGVARCHAR},
       big_type = #{bigType,jdbcType=INTEGER},
       small_type = #{smallType,jdbcType=INTEGER},
       count = #{count,jdbcType=INTEGER},

@@ -254,7 +254,7 @@
     color: #b2b2b2;
     height: 90px;
     line-height: 90px;
-    width: 100%;
+    width: 1200px;
   }
 
   .app-head-inner {
@@ -291,7 +291,7 @@
   .app-foot {
     text-align: center;
     height: 80px;
-    width: 100%;
+    width: 1200px;
     line-height: 80px;
     background: #e3e4e8;
     clear: both;
