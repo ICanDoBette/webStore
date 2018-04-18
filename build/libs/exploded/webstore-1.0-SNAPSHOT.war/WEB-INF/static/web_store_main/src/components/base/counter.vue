@@ -80,6 +80,8 @@ export default {
       }
       this.number ++
       this.makeCss()
+    },beZero(){
+      this.number=0
     }
   }
 }

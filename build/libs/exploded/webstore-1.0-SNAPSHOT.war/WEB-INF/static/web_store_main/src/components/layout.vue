@@ -254,11 +254,11 @@
     color: #b2b2b2;
     height: 90px;
     line-height: 90px;
-    width: 100%;
+    width: 1349px;
   }
 
   .app-head-inner {
-    width: 1200px;
+    width: 1349px;
     margin: 0 auto;
   }
 
@@ -291,7 +291,7 @@
   .app-foot {
     text-align: center;
     height: 80px;
-    width: 100%;
+    width: 1349px;
     line-height: 80px;
     background: #e3e4e8;
     clear: both;
@@ -299,7 +299,7 @@
   }
 
   .container {
-    width: 1200px;
+    width: 1349px;
     margin: 0 auto;
   }
 

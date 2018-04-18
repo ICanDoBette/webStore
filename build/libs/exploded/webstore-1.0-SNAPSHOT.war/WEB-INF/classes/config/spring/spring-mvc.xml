@@ -59,6 +59,10 @@
             <!-- 处理拦截的具体实现类 -->
             <bean class="com.zdj.web.interceptors.DefaultInterceptor" />
         </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/buy/**"/>
+            <bean class="com.zdj.web.interceptors.LoginInterceptor"/>
+        </mvc:interceptor>
     </mvc:interceptors>
     <!--redis-->
     <!-- redis连接池 -->

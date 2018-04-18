@@ -17,8 +17,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         try {
             String name = (String) request.getSession().getAttribute("name");
-            String id = (String) request.getSession().getAttribute("id");
-            if (StringUtils.isBlank(name) || StringUtils.isBlank(id)) {
+            Integer id = (Integer) request.getSession().getAttribute("id");
+            if (StringUtils.isBlank(name) || id == null || id == -1) {
                 logger.info("用户没有登陆");
                 return false;
             } else {
