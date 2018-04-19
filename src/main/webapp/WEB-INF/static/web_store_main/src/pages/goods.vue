@@ -1,9 +1,9 @@
 <template>
   <div style="width:1100px; margin-top: 15px; margin:0 auto"><img :src="picturePath"
-                                                style="width:400px; height:400px; float:left; padding-left:50px"/>
+                                                                  style="width:400px; height:400px; float:left; padding-left:50px"/>
     <div style="float:right; width:490px; height:400px; padding-right:50px;">
       <div>
-        <h4 style="font-size:35px; padding-left:15px;" >{{name}}</h4>
+        <h4 style="font-size:35px; padding-left:15px;">{{name}}</h4>
       </div>
       <hr color="#CCCCCC"/>
       <div style="height:55px; padding:3px;">
@@ -14,7 +14,8 @@
       <div style="height:55px; padding:3px;">
         <span style="color:#000033; font-size:20px; margin-top:10px; float:left">购买数量</span>
         <div style="float:left; width:130px;">&nbsp;</div>
-        <counter style="float:left;" :max="count" :min="count-count" @onChangeNum="changedBuy"></counter>
+        <counter style="float:left;" :max="count" :min="count-count" @onChangeNum="changedBuy"
+                 ref="buy_counter"></counter>
       </div>
       <div style="height:55px; padding:3px;">
         <span style="color:#000033; font-size:20px; margin-top:10px; float:left">库存</span>
@@ -22,18 +23,23 @@
         <span style="color:#FF0000; font-size:30px; float:left">{{count}}</span>
       </div>
       <div style="padding:3px;" v-if="isLogin">
-        <div @click="buy" style="float:left; height:40px; width:135px; background:#FFD9BC; border:solid 1px #F0CAB6;cursor:pointer;">
+        <div @click="buy"
+             :class="buyCss">
           <div style="height:8px"></div>
           <center>
-            <font color="#E5511D">立即购买</font>
+            {{buyWord}}
           </center>
         </div>
         <div style="float:left; width:8px;">&nbsp;</div>
-        <div @click="addShopCar" style="float:left; height:40px; width:150px; background:#F22D00;cursor:pointer; ">
+        <div v-show="count!=0" @click="addShopCar"
+             style="float:left; height:40px; width:150px; background:#F22D00;cursor:pointer; ">
           <div style="height:8px"></div>
           <center>
             <font color="#FFFFFF">加入购物车</font>
           </center>
+        </div>
+        <div>
+
         </div>
       </div>
       <div style="padding:3px;" v-else>
@@ -61,7 +67,8 @@
         <div style="float:left; margin-left:50px; margin-top:10px; width:1000px">平均分值:
           <font color="#FF0000"><span v-for="n in avg">★</span></font>
         </div>
-        <div :class="{commentBackground:(index % 2==0) }" style="float:left; margin:5px;" v-for="(comment,index) in comments">
+        <div :class="{commentBackground:(index % 2==0) }" style="float:left; margin:5px;"
+             v-for="(comment,index) in comments">
           <div style="float:left; width:100px; height:100px">
             <div style=" height:15px; position:relative; top:30%;">
               <center>
@@ -87,6 +94,7 @@
 
 <script>
   import Counter from '../components/base/counter'
+
   export default {
     created: function () {
       this.$http.post('/goods/detail',{'id':this.$route.params.id}).then((res) => {
@@ -109,7 +117,7 @@
       })
     },
     components: {
-      Counter:Counter,
+      Counter: Counter,
     },
     data() {
       return {
@@ -122,72 +130,105 @@
         price: '',
         information: 'aaa<font color="red">ssdsa</font>',
         buyNum: 0,
-        isComment:false,
-        avg:4,
-        comments:[
+        isComment: false,
+        avg: 4,
+        comments: [
           {
-            name:'hello',
-            star:3,
-            comment:'哈哈'
-          },{
-            name:'hello',
-            star:3,
-            comment:'哈哈'
-          },{
-            name:'hello',
-            star:4,
-            comment:'哈哈'
+            name: 'hello',
+            star: 3,
+            comment: '哈哈'
+          }, {
+            name: 'hello',
+            star: 3,
+            comment: '哈哈'
+          }, {
+            name: 'hello',
+            star: 4,
+            comment: '哈哈'
           }
         ],
-        commentHeader1:'commentHeaderCheckBackground',
-        commentHeader2:'commentHeaderUnCheckBackground',
-        Msg:''
+        commentHeader1: 'commentHeaderCheckBackground',
+        commentHeader2: 'commentHeaderUnCheckBackground',
+        Msg: '',
+        buyCss: '',
+        buyWord: ''
       }
     }, methods: {
-      changedBuy(val){
-        this.buyNum=val
-      },switchHeader(val){
-        if (val==1){
-          this.isComment=false
-        }else{
-          this.isComment=true
+      changedBuy(val) {
+        this.buyNum = val
+      }, switchHeader(val) {
+        if (val == 1) {
+          this.isComment = false
+        } else {
+          this.isComment = true
         }
       },buy(){
-        this.$http.post('/goods/addShopCar',{'id':this.id,'buyNum':this.buyNum}).then((res) => {
-           if(res.data.msg!='ok' && res.data.shopCarId!=-1){
-             this.count=res.data.count
-             this.$emit('onOperateChrild',res.data.msg,true)
+        if(this.count>0&&this.buyNum>0){
+          this.$http.post('/buy/addShopCar',{'id':this.id,'buyNum':this.buyNum}).then((res) => {
+            if(res.data.msg!='ok'){
+              if(res.data.count!=-1) {
+                this.count = res.data.count
+                this.buyNum = 0
+              }
+              this.$refs.buy_counter.beZero()
+              this.$emit('onOperateChrild',res.data.msg,true)
             }else{
-              this.$router.push({name: '/buy/'+ res.data.shopCarId})
+              if(res.data.count!=-1) {
+                this.count = res.data.count
+                this.buyNum = 0
+              }
+              this.$router.push({path: '/buy/'+ res.data.shopCarId});
             }
-        }, (err) => {
+          }, (err) => {
           console.log(err)
-        })
+          })
+        }else if(this.count>0&&this.buyNum<=0) {
+          this.$emit('onOperateChrild','请输入购买数量！',true)
+        }
       },addShopCar(){
-        this.$http.post('/goods/addShopCar',{'id':this.id,'buyNum':this.buyNum}).then((res) => {
-          if(res.data.msg!='ok'){
-            if(res.data.count!=-1) {
-              this.count = res.data.count
+        if(this.count>0&&this.buyNum>0){
+          this.$http.post('/buy/addShopCar',{'id':this.id,'buyNum':this.buyNum}).then((res) => {
+            if(res.data.msg!='ok'){
+              if(res.data.count!=-1) {
+               this.count = res.data.count
+               this.buyNum = 0
+              }
+             this.$refs.buy_counter.beZero()
+             this.$emit('onOperateChrild',res.data.msg,true)
+           }else{
+             if(res.data.count!=-1) {
+               this.count = res.data.count
+               this.buyNum = 0
+             }
+              this.$refs.buy_counter.beZero()
+              this.$emit('onOperateChrild','添加成功，商品在购物车哦亲~',true)
             }
-            this.$emit('onOperateChrild',res.data.msg,true)
-          }else{
-            this.$emit('onOperateChrild','添加成功，商品在购物车哦亲~',true)
-          }
-         }, (err) => {
-          console.log(err)
-         })
+           }, (err) => {
+             console.log(err)
+           })
+        }else if(this.count>0&&this.buyNum<=0) {
+          this.$emit('onOperateChrild','请输入购买数量！',true)
+        }
       }
-    },props:{
-      'isLogin':[Boolean]
+    }, props: {
+      'isLogin': [Boolean]
     },
     watch: {
-      isComment(){
-        if (!this.isComment){
-          this.commentHeader1='commentHeaderCheckBackground'
-          this.commentHeader2='commentHeaderUnCheckBackground'
-        }else{
-          this.commentHeader1='commentHeaderUnCheckBackground'
-          this.commentHeader2='commentHeaderCheckBackground'
+      isComment() {
+        if (!this.isComment) {
+          this.commentHeader1 = 'commentHeaderCheckBackground'
+          this.commentHeader2 = 'commentHeaderUnCheckBackground'
+        } else {
+          this.commentHeader1 = 'commentHeaderUnCheckBackground'
+          this.commentHeader2 = 'commentHeaderCheckBackground'
+        }
+      }, count() {
+        if (this.count > 0) {
+          this.buyCss = 'canbuy'
+          this.buyWord = '立即购买'
+        } else {
+          this.buyCss = 'cantbuy'
+          this.buyWord = '已售光'
         }
       }
     }
@@ -195,13 +236,44 @@
 </script>
 
 <style scoped>
-.commentBackground{
-  background:#999999
-}
-  .commentHeaderCheckBackground{
-    cursor:pointer; background-color:#FFFFFF; width:200px; height:45px; float:left; color:#FF4400;
+  .commentBackground {
+    background: #999999
   }
-.commentHeaderUnCheckBackground{
-  cursor:pointer;  background-color:#999999; width:200px; height:45px; float:left; border-bottom-color:#E5E5EF
-}
+
+  .commentHeaderCheckBackground {
+    cursor: pointer;
+    background-color: #FFFFFF;
+    width: 200px;
+    height: 45px;
+    float: left;
+    color: #FF4400;
+  }
+
+  .commentHeaderUnCheckBackground {
+    cursor: pointer;
+    background-color: #999999;
+    width: 200px;
+    height: 45px;
+    float: left;
+    border-bottom-color: #E5E5EF
+  }
+
+  .canbuy {
+    float: left;
+    height: 40px;
+    width: 135px;
+    background: #FFD9BC;
+    border: solid 1px #F0CAB6;
+    cursor: pointer;
+    color: #E5511D
+  }
+
+  .cantbuy {
+    float: left;
+    height: 40px;
+    width: 135px;
+    background: rgba(191, 191, 191, 0.93);
+    cursor: not-allowed;
+    color: #e8000a
+  }
 </style>

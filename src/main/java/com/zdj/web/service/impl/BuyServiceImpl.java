@@ -56,6 +56,7 @@ public class BuyServiceImpl implements BuyService {
                 if (shopcars.size()!=0){
                     shopcar= shopcars.get(0);
                     shopcar.setGoodCount(shopcar.getGoodCount()+buyNum);
+                    shopcar.setUpdateTime(new Date());
                     i = shopcarMapper.updateByPrimaryKeySelective(shopcar);
                     if (i!=1){
                         throw new SQLException("购买异常！");
@@ -71,6 +72,7 @@ public class BuyServiceImpl implements BuyService {
                     shopcar.setUpdateTime(new Date());
                     shopcar.setUpdateUser("Sys");
                     shopcar.setUserId(userId);
+                    shopcar.setAddressId(-1);
                     i = shopcarMapper.insertSelective(shopcar);
                     if (i != 1) {
                         throw new SQLException("购买异常！");
