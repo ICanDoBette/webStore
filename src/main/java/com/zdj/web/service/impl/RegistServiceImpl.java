@@ -25,14 +25,14 @@ public class RegistServiceImpl implements RegistService {
         RegistModel registModel = new RegistModel();
         LoginModel loginModel = new LoginModel();
         UserExample userExample = new UserExample();
-        userExample.or().andNameEqualTo(user.getName());
+        userExample.or().andNameEqualTo(user.getName()).andIsDeleteEqualTo(new Byte("0"));
         long l = userMapper.countByExample(userExample);
         if (l == 1L) {
             registModel.setRegistMessage("该用户名已经被注册！");
             registModel.setLoginModel(loginModel);
             registModel.setIsRegist(false);
             return JSONObject.toJSONString(registModel);
-        }else {
+        } else {
             int i = userMapper.insertSelective(user);
             if (i == 1) {
                 userExample = new UserExample();

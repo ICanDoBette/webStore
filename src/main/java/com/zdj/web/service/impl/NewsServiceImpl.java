@@ -24,7 +24,7 @@ public class NewsServiceImpl implements NewsService {
     public List<BigNewsModel> getBigNews() {
         NewsExample newsExample = new NewsExample();
         newsExample.setOrderByClause("priority desc");
-        newsExample.or().andTypeEqualTo(2);
+        newsExample.or().andTypeEqualTo(2).andIsDeleteEqualTo(new Byte("0"));
         List<NewsWithBLOBs> newsWithBLOBs = newsMapper.selectByExampleWithBLOBs(newsExample);
         List<BigNewsModel> bigNewsModels = new ArrayList<>(newsWithBLOBs.size());
         BigNewsModel bigNewsModel;
@@ -43,7 +43,9 @@ public class NewsServiceImpl implements NewsService {
     public NewsDetailModel getNewsDetail(int id) {
         NewsWithBLOBs newsWithBLOBs = newsMapper.selectByPrimaryKey(id);
         NewsDetailModel newsDetailModel = new NewsDetailModel();
-        BeanUtils.copyProperties(newsWithBLOBs, newsDetailModel);
+        if (newsWithBLOBs.getIsDelete().intValue() == 0) {
+            BeanUtils.copyProperties(newsWithBLOBs, newsDetailModel);
+        }
         return newsDetailModel;
     }
 
@@ -51,7 +53,7 @@ public class NewsServiceImpl implements NewsService {
     public List<SmallNewsModel> getSmallNews() {
         NewsExample newsExample = new NewsExample();
         newsExample.setOrderByClause("priority desc");
-        newsExample.or().andTypeEqualTo(1);
+        newsExample.or().andTypeEqualTo(1).andIsDeleteEqualTo(new Byte("0"));
         List<NewsWithBLOBs> newsWithBLOBs = newsMapper.selectByExampleWithBLOBs(newsExample);
         SmallNewsModel smallNewsModel;
         List<SmallNewsModel> smallNewsModels = new ArrayList<>(newsWithBLOBs.size());

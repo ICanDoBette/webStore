@@ -364,10 +364,13 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectCommentsById" resultType="com.zdj.web.model.CommentsModel">
-    SELECT name , star , comment
-    FROM comment , user
+    SELECT user.name AS name , star , comment.comment AS comment
+    FROM comment , user , goods
     WHERE user.is_delete = '0'
     AND comment.good_id = #{goodId,jdbcType=INTEGER}
     AND comment.user_id=user.id
+    AND comment.is_delete = '0'
+    AND comment.good_id = goods.id
+    AND goods.is_down = '0'
   </select>
 </mapper>

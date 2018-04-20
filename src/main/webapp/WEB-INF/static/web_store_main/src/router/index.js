@@ -8,6 +8,7 @@ import DetailForecastPage from '../pages/detail/forecast.vue'
 import DetailPublishPage from '../pages/detail/publish.vue'
 import News from '../pages/news.vue'
 import Goods from '../pages/goods.vue'
+import Select from '../pages/select.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -47,7 +48,11 @@ export default new Router({
     },{
       path: '/goods/:id',
       component: Goods,
-      meta: {keepAlive: true}
+      meta: {keepAlive: false}
+    },{
+      path: '/selectPage',
+      component: Select,
+      meta: {keepAlive: false}
     }
   ]
 })

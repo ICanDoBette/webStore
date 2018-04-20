@@ -96,3 +96,15 @@ CREATE TABLE `user` (
   `is_delete` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `headgood` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `good_id` int(11) NOT NULL COMMENT '商品id',
+  `comment` varchar(200) COLLATE utf8_bin NOT NULL COMMENT '简介',
+  `picture_path` text COLLATE utf8_bin COMMENT '图片路径',
+  `create_time` date NOT NULL COMMENT '创建时间',
+  `create_user` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '创建人',
+  `update_time` date NOT NULL COMMENT '更新时间',
+  `update_user` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '更新人',
+  `is_delete` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin

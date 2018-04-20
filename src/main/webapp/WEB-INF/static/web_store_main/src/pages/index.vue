@@ -3,13 +3,13 @@
     <div class="index-left">
       <div class="index-left-block">
         <h2>全部产品</h2>
-
         <template v-for="product in productList">
-          <h3>{{ product.title}}</h3>
+          <h3 @click="function() {
+            $router.push({path: '/selectPage?bigTypeValue='+ product.id});
+          }" style="cursor: pointer;">{{ product.name}}</h3>
           <ul>
-            <li v-for="item in product.list">
-              <a :href="item.url">{{ item.name }}</a>
-              <span v-if="item.hot" class="hot-tag">HOT</span>
+            <li v-for="item in product.smallTypes">
+              <a :href="'/#/selectPage?smallTypeValue='+item.id">{{ item.name }}</a>
             </li>
           </ul>
           <div class="hr"></div>
@@ -35,11 +35,11 @@
           class="index-board-item"
           v-for="(item, index) in boardList"
           :class="[{'line-last' : index % 2 !== 0} ]">
-          <div class="index-board-item-inner" :style="'background: url('+item.picUrl+') no-repeat;'">
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.description }}</p>
+          <div class="index-board-item-inner" :style="'background: url('+item.picturePath+') no-repeat;'">
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.comment }}</p>
             <div v-if="!item.saleout" class="index-board-button">
-              <router-link class="button" :to="{path: 'detail/' + item.toKey}">立即购买</router-link>
+              <router-link class="button" :to="{path: '/goods/' + item.goodId}">去看看</router-link>
             </div>
             <div v-else class="index-board-button">
               <div class="button-cant">已售光</div>
@@ -55,8 +55,8 @@
   import slideShow from '../components/slideShow.vue'
   export default {
     created: function () {
-      this.$http.post('getList', {userId: 123}).then((res) => {
-        this.boardList = res.data
+      this.$http.post('/goods/type').then((res) => {
+        this.productList = res.data
       }, (err) => {
         console.log(err)
       })
@@ -67,6 +67,11 @@
       })
       this.$http.post('/news/getSmallNews').then((res) => {
         this.newsList = res.data
+      }, (err) => {
+        console.log(err)
+      })
+      this.$http.post('/goods/boardList').then((res) => {
+        this.boardList = res.data
     }, (err) => {
         console.log(err)
       })
@@ -77,47 +82,54 @@
       return {
         invTime:10000,
         slides:[],
-        productList: {
-          pc: {
-            title: 'PC产品',
-            list: [
+        productList: [
+          {
+            name: 'big1',
+            id: 1,
+            smallTypes: [
               {
-                name: '数据统计',
-                url: '/shujutongji'
-              },
+                name: 'small1',
+                id: 4,
+              }, {
+                name: 'small2',
+                id: 5,
+              }, {
+                name: 'small3',
+                id: 6,
+              }
+            ]
+          }, {
+            name: 'big2',
+            id: 2,
+            smallTypes: [
               {
-                name: '数据预测',
-                url: '/shujuyuce'
+                name: 'small4',
+                id: 4,
               }, {
-                name: '流量分析',
-                url: '/liuliangfenxi',
-                hot: true
+                name: 'small5',
+                id: 5,
               }, {
-                name: '广告发布',
-                url: '/guanggaofabu',
+                name: 'small6',
+                id: 6,
+              }
+            ]
+          }, {
+            name: 'big3',
+            id: 3,
+            smallTypes: [
+              {
+                name: 'small7',
+                id: 4,
+              }, {
+                name: 'small8',
+                id: 5,
+              }, {
+                name: 'small9',
+                id: 6,
               }
             ]
           },
-          app: {
-            title: '应用类',
-            list: [
-              {
-                name: '91助手',
-                url: '/91zhushou'
-              },
-              {
-                name: '产品助手',
-                url: '/chanpingzhushou'
-              }, {
-                name: '智能地图',
-                url: '/91zhushou'
-              }, {
-                name: '团队语言',
-                url: '/tuanduiyuyin'
-              }
-            ]
-          }
-        },
+        ],
         newsList: [
           {
             title: 'news1',
@@ -136,24 +148,28 @@
         ],
         boardList: [
           {
-            title: '开放产品',
-            picUrl: require('../assets/images/1.png'),
-            description: '开放产品是一款开放产品',
+            goodId:1,
+            name: '开放产品',
+            picturePath: '',
+            comment: '开放产品是一款开放产品',
             saleout: false
           }, {
-            title: '品牌营销',
-            picUrl: require('../assets/images/2.png'),
-            description: '品牌营销帮助你的产品更好地找到定位',
+            goodId:2,
+            name: '品牌营销',
+            picturePath: '',
+            comment: '品牌营销帮助你的产品更好地找到定位',
             saleout: false
           }, {
-            title: '使命必达',
-            description: '使命必达快速迭代永远保持最前端的速度',
-            picUrl: require('../assets/images/3.png'),
+            goodId:3,
+            name: '使命必达',
+            comment: '使命必达快速迭代永远保持最前端的速度',
+            picturePath: '',
             saleout: true
           }, {
-            title: '永攀高峰',
-            picUrl: require('../assets/images/4.png'),
-            description: '帮你勇闯高峰，到达事业的顶峰',
+            goodId:4,
+            name: '永攀高峰',
+            picturePath: '',
+            comment: '帮你勇闯高峰，到达事业的顶峰',
             saleout: false
           }
         ]
@@ -235,15 +251,15 @@
   }
 
   .index-board-loud .index-board-item-inner {
-    background: url(../assets/images/2.png) no-repeat;
+    background: url(../../../../files/pictures/2.png) no-repeat;
   }
 
   .index-board-earth .index-board-item-inner {
-    background: url(../assets/images/3.png) no-repeat;
+    background: url(../../../../files/pictures/3.png) no-repeat;
   }
 
   .index-board-hill .index-board-item-inner {
-    background: url(../assets/images/4.png) no-repeat;
+    background: url(../../../../files/pictures/4.png) no-repeat;
   }
 
   .index-board-item h2 {

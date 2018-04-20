@@ -26,7 +26,7 @@
           {
             name: '数据统计',
             path: 'count',
-            icon: require('../assets/images/1.png'),
+            icon: require('../../../../files/pictures/1.png'),
             active: false
           },
           {
@@ -46,10 +46,10 @@
           }
         ],
         imgMap: {
-          '/detail/count': require("../assets/images/1.png"),
-          '/detail/forecast': require("../assets/images/2.png"),
-          '/detail/analysis': require("../assets/images/3.png"),
-          '/detail/publish': require("../assets/images/4.png")
+          '/detail/count': require("../../../../files/pictures/1.png"),
+          '/detail/forecast': require("../../../../files/pictures/2.png"),
+          '/detail/analysis': require("../../../../files/pictures/3.png"),
+          '/detail/publish': require("../../../../files/pictures/4.png")
         }
       }
     },
