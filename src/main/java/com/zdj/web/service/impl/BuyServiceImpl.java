@@ -70,11 +70,9 @@ public class BuyServiceImpl implements BuyService {
                     shopcar.setGoodCount(buyNum);
                     shopcar.setGoodId(goodId);
                     shopcar.setIsDelete(new Byte("0"));
-                    shopcar.setState(new Byte("0"));
                     shopcar.setUpdateTime(new Date());
                     shopcar.setUpdateUser("Sys");
                     shopcar.setUserId(userId);
-                    shopcar.setAddressId(-1);
                     i = shopcarMapper.insertSelective(shopcar);
                     if (i != 1) {
                         throw new SQLException("购买异常！");

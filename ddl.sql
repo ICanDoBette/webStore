@@ -1,16 +1,3 @@
-CREATE TABLE `address` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `user_id` INT(11) NOT NULL COMMENT '用户id',
-  `addres` TEXT COLLATE utf8_bin NOT NULL COMMENT '收货地址',
-  `tel` INT(11) NOT NULL COMMENT '收货电话',
-  `level` INT(11) NOT NULL COMMENT '收货地址等级',
-  `create_time` DATE NOT NULL COMMENT '创建时间',
-  `create_user` VARCHAR(20) COLLATE utf8_bin NOT NULL COMMENT '创建人',
-  `update_time` DATE NOT NULL COMMENT '更新时间',
-  `update_user` VARCHAR(20) COLLATE utf8_bin NOT NULL COMMENT '更新人',
-  `is_delete` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
-  PRIMARY KEY (`id`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 CREATE TABLE `comment` (
   `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `good_id` INT(11) NOT NULL COMMENT '商品id',
@@ -56,20 +43,6 @@ CREATE TABLE `news` (
   `is_delete` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-CREATE TABLE `shopcar` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `good_id` INT(11) NOT NULL COMMENT '货物id',
-  `user_id` INT(11) NOT NULL COMMENT '用户id',
-  `address_id` INT(11) NOT NULL COMMENT '收货地址id,-1为未添加暂不结算' DEFAULT -1,
-  `good_count` INT(11) NOT NULL COMMENT '购买数量',
-  `state` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '0:未付款,1:已付款',
-  `create_time` DATE NOT NULL COMMENT '创建时间',
-  `create_user` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '创建人',
-  `update_time` DATE NOT NULL COMMENT '更新时间',
-  `update_user` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '更新人',
-  `is_delete` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
-  PRIMARY KEY (`id`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 CREATE TABLE `type` (
   `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `level` INT(11) NOT NULL DEFAULT '1' COMMENT '类型等级',
@@ -107,4 +80,58 @@ CREATE TABLE `headgood` (
   `update_user` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '更新人',
   `is_delete` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `shopcar` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `good_id` INT(11) NOT NULL COMMENT '货物id',
+  `user_id` INT(11) NOT NULL COMMENT '用户id',
+  `good_count` INT(11) NOT NULL COMMENT '购买数量',
+  `create_time` DATE NOT NULL COMMENT '创建时间',
+  `create_user` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '创建人',
+  `update_time` DATE NOT NULL COMMENT '更新时间',
+  `update_user` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '更新人',
+  `is_delete` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `address` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `user_id` INT(11) NOT NULL COMMENT '用户id',
+  `addres` TEXT COLLATE utf8_bin NOT NULL COMMENT '收货地址',
+  `tel` INT(11) NOT NULL COMMENT '收货电话',
+  `name` VARCHAR(20) COLLATE utf8_bin NOT NULL COMMENT '收件人人',
+  `level` INT(11) NOT NULL COMMENT '收货地址等级',
+  `create_time` DATE NOT NULL COMMENT '创建时间',
+  `create_user` VARCHAR(20) COLLATE utf8_bin NOT NULL COMMENT '创建人',
+  `update_time` DATE NOT NULL COMMENT '更新时间',
+  `update_user` VARCHAR(20) COLLATE utf8_bin NOT NULL COMMENT '更新人',
+  `is_delete` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `alreadyBuy` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `good_id` INT(11) NOT NULL COMMENT '货物id',
+  `user_id` INT(11) NOT NULL COMMENT '用户id',
+  `address_id` INT(11) NOT NULL COMMENT '收货地址id',
+  `good_count` INT(11) NOT NULL COMMENT '购买数量',
+  `pay` INT(11) NOT NULL COMMENT '付款',
+  `state` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '0:未发货,1:已发货,2:待领取,3:交易完成,4:申请售后',
+  `create_time` DATE NOT NULL COMMENT '创建时间',
+  `create_user` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '创建人',
+  `update_time` DATE NOT NULL COMMENT '更新时间',
+  `update_user` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '更新人',
+  `is_delete` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `banks` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `name` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '银行英文',
+  `label` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT  '银行中文',
+  `style`  VARCHAR(50) CHARACTER SET utf8 NOT NULL COMMENT '图片定位',
+  `level` INT(11) NOT NULL COMMENT '优先级',
+  `create_time` DATE NOT NULL COMMENT '创建时间',
+  `create_user` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '创建人',
+  `update_time` DATE NOT NULL COMMENT '更新时间',
+  `update_user` VARCHAR(20) CHARACTER SET utf8 NOT NULL COMMENT '更新人',
+  `is_delete` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

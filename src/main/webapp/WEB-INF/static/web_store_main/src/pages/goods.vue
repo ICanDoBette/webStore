@@ -177,7 +177,7 @@
                 this.count = res.data.count
                 this.buyNum = 0
               }
-              this.$router.push({path: '/buyPage/'+ res.data.shopCarId});
+              this.$router.push({path: '/settlement/'+ res.data.shopCarId});
             }
           }, (err) => {
           console.log(err)

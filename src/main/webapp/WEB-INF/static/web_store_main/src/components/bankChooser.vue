@@ -1,69 +1,93 @@
 <template>
   <div class="chooser-component">
-    <ul class="chooser-list">
+    <ul v-for="(banks,bigIndex) in bigBanks" class="chooser-list">
       <li
       v-for="(item, index) in banks"
-      @click="chooseSelection(index)"
+      @click="chooseSelection(bigIndex,index)"
       :title="item.label"
-      :class="[item.name, {active: index === nowIndex}]"
+      :class="{active: index === nowIndex && nowBigIndex === bigIndex}"
+      :style="item.style"
       ></li>
     </ul>
+
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  created: function () {
+    this.$http.post('/test').then((res) => {
+      this.bigBanks=res.data
+  }, (err) => {
+      console.log(err)
+    })
+  }, data () {
     return {
-      nowIndex: 0,
-      banks: [
+      nowIndex: -1,
+      nowBigIndex: -1,
+      bigBanks:[
+        [
+      {
+        id: 201,
+        label: '招商银行',
+        name: 'zhaoshang',
+        style:'background-position: -2160px 0;'
+      },
+      {
+        id: 301,
+        label: '中国建设银行',
+        name: 'jianshe',
+        style:'background-position: -720px 0;'
+      },
+      {
+        id: 601,
+        label: '浦发银行',
+        name: 'pufa',
+        style:'background-position: -1800px 0;'
+      },
+      {
+        id: 1101,
+        label: '交通银行',
+        name: 'jiaotong',
+        style:'background-position: -3120px 0;'
+      },
+
+    ],[
           {
-              id: 201,
-              label: '招商银行',
-              name: 'zhaoshang'
+            id: 101,
+            label: '中国工商银行',
+            name: 'gongshang',
+            style:'background-position: -2640px 0;'
           },
           {
-              id: 301,
-              label: '中国建设银行',
-              name: 'jianshe'
+            id: 401,
+            label: '中国农业银行',
+            name: 'nongye',
+            style:' background-position: -1680px 0;'
           },
           {
-              id: 601,
-              label: '浦发银行',
-              name: 'pufa'
+            id: 1201,
+            label: '中国银行',
+            name: 'zhongguo',
+            style:'background-position: -2520px 0;'
           },
           {
-              id: 1101,
-              label: '交通银行',
-              name: 'jiaotong'
-          },
-          {
-              id: 101,
-              label: '中国工商银行',
-              name: 'gongshang'
-          },
-          {
-              id: 401,
-              label: '中国农业银行',
-              name: 'nongye'
-          },
-          {
-              id: 1201,
-              label: '中国银行',
-              name: 'zhongguo'
-          },
-          {
-              id: 501,
-              label: '中信银行',
-              name: 'zhongxin'
+            id: 501,
+            label: '中信银行',
+            name: 'zhongxin',
+            style:' background-position: -480px 0;'
           }
-      ]
+
+    ]
+      ],
+
     }
   },
   methods: {
-    chooseSelection (index) {
+    chooseSelection (bigIndex,index) {
+      this.nowBigIndex=bigIndex
       this.nowIndex = index
-      this.$emit('on-change', this.banks[index])
+      this.$emit('onChangeBank', this.bigBanks[bigIndex][index].id)
     }
   }
 }
@@ -78,7 +102,7 @@ export default {
 .chooser-list li.active {
   border: 1px solid #4fc08d;
 }
-.chooser-list li { 
+.chooser-list li {
     display: inline-block;
     width: 117px;
     height: 32px;
@@ -88,18 +112,8 @@ export default {
     border: 1px solid #e3e3e3;
     cursor: pointer;
 }
-.zhaoshang {
-    background-position: -2160px 0;
-}
-.jianshe {
-    background-position: -720px 0;
-}
-.pufa {
-    background-position: -1800px 0;
-}
-.jiaotong {
-    background-position: -3120px 0;
-}
+
+
 .minsheng {
     background-position: -2760px 0;
 }
@@ -118,21 +132,12 @@ export default {
 .guangfa {
     background-position: -840px 0;
 }
-.gongshang {
-    background-position: -2640px 0;
-}
-.nongye {
-    background-position: -1680px 0;
-}
+
+
 .guangda {
     background-position: -2280px 0;
 }
-.zhongguo {
-    background-position: -2520px 0;
-}
-.zhongxin {
-    background-position: -480px 0;
-}
+
 .chuxu {
     background-position: -120px 0;
 }

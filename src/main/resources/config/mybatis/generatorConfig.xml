@@ -56,6 +56,8 @@
          <table  tableName="type"></table>
          <table  tableName="user"></table>
          <table  tableName="headgood"></table>
+         <table  tableName="banks"></table>
+         <table  tableName="alreadybuy"></table>
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
             <columnOverride column="" javaType="" />

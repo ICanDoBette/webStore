@@ -13,7 +13,9 @@
             <li>你好！{{this.loginModel.name}}</li>
             <li @click="operateLoginWindow">&nbsp;&nbsp;&nbsp;个人中心</li>
             <li class="nav-pile">|</li>
-            <li>购物车</li>
+            <li @click="rountToShopCar">购物车</li>
+            <li class="nav-pile">|</li>
+            <li @click="rountToAlreadyBuy">已买到的宝贝</li>
             <li class="nav-pile">|</li>
             <li @click="logout">退出登录</li>
           </ul>
@@ -22,9 +24,9 @@
     </div>
     <div class="app-content">
       <keep-alive>
-        <router-view v-if="$route.meta.keepAlive" @onOperateChrild="operateChrild" :isLogin="loginModel.isLogin"></router-view>
+        <router-view ref="chrildComponenet" v-if="$route.meta.keepAlive" @onOperateChrild="operateChrild" @onOperateAddress="operateAddress" :isLogin="loginModel.isLogin"></router-view>
       </keep-alive>
-      <router-view v-if="!$route.meta.keepAlive" @onOperateChrild="operateChrild" :isLogin="loginModel.isLogin"></router-view>
+      <router-view ref="chrildComponenet" v-if="!$route.meta.keepAlive" @onComment="operateComment" @onOperateChrild="operateChrild" :isLogin="loginModel.isLogin"></router-view>
     </div>
     <div class="app-foot">
       <p>© 2016 fishenal MIT</p>
@@ -59,12 +61,36 @@
     <my-dialog :isShow="isShowChrildMsg" @on-close="operateChrild('',false)">
       {{ Msg }}
     </my-dialog>
+    <my-dialog :isShow="isShowAddress" @on-close="operateAddressWindow">
+      <div>收货地址:<input type="text" v-model="addreess"/></div>
+      <div>收货电话:<input type="password" v-model="addressTel"/></div>
+      <div>收货人:<input type="password" v-model="addressName"/></div>
+      <div>
+        <div><button @click="addAddress">增加</button></div>
+      </div>
+      <div v-show="hitAddress">
+        <font color="red">
+          <span>{{ addressMessage }}</span>
+        </font>
+      </div>
+    </my-dialog>
+    <my-dialog :isShow="isShowComment" @on-close="operateCommentWindow">
+      <star @onChange="changeCommentStar"></star>
+      <div>{{commentStarStr}}</div>
+      <div>请输入您的评价:<input type="text" v-model="commentStr"/></div>
+      <div><span @click="addComment" class="buttonStyle">提交</span> </div>
+      <div v-show="hitComment">
+        <font color="red">
+          <span>{{ commentMessage }}</span>
+        </font>
+      </div>
+    </my-dialog>
   </div>
 </template>
 
 <script>
   import Dialog from '../components/base/dialog.vue'
-
+  import Star from '../components/base/star'
   export default {
     created: function () {
       this.$http.post('/checkLogin').then((res) => {
@@ -75,7 +101,8 @@
         this.loginModel.isLogin=false
       })
     },components: {
-      MyDialog: Dialog
+      MyDialog: Dialog,
+      Star:Star
     },
     data() {
       return {
@@ -97,9 +124,32 @@
           isLogin: false
         },
         Msg:'',
-        isShowChrildMsg:false
+        isShowChrildMsg:false,
+        isShowAddress:false,
+        addreess:'abc',
+        addressTel:18797818175,
+        addressName:'abcd',
+        hitAddress:false,
+        addressMessage:'',
+        isShowComment:false,
+        commentStar:-1,
+        commentStr:'',
+        commentMessage:'',
+        hitComment:false,
+        commentId:-1,
       }
-    }, methods: {
+    },
+    computed: {
+      // 计算属性
+      commentStarStr() {
+        if (this.commentStar==-1){
+          return ''
+        } else {
+          return '您的评分:'+this.commentStar+'分'
+        }
+      }
+    },
+    methods: {
       regist(){
         if (this.registName==''||this.registEmail==''||this.registTel==''||this.registPassword==''){
           this.hitRegist=true
@@ -176,6 +226,76 @@
           this.Msg=''
           this.isShowChrildMsg=false
         }
+      },operateAddressWindow(){
+        this.isShowAddress=false
+        this.hitAddress=false
+      },operateAddress(){
+        this.isShowAddress=true
+        this.hitAddress=false
+      },addAddress(){
+        if (this.addreess==''){
+          this.hitAddress=true
+          this.addressMessage='请输入收货地址'
+          return
+        }
+        if(this.addressTel==0){
+          this.hitAddress=true
+          this.addressMessage='请输入收货电话'
+          return
+        }
+        if(this.addressName==''){
+          this.hitAddress=true
+          this.addressMessage='请输入收货人姓名'
+          return
+        }
+        this.$http.post('/test',{'addreess':this.addreess,'addressTel':this.addressTel,'name':this.addressName}).then((res) => {
+          if(res.data.msg=='ok'){
+          this.$refs.chrildComponenet.getAddress()
+          this.operateAddressWindow()
+        }else{
+          this.hitAddress=true
+          this.addressMessage=res.data.msg
+        }
+      }, (err) => {
+          this.hitAddress=true
+          this.addressMessage=err
+        })
+      },operateComment(buyId){
+        this.commentId=buyId
+        this.isShowComment=true
+        this.hitComment=false
+      },operateCommentWindow(){
+        this.commentId=-1
+        this.hitComment=false
+        this.isShowComment=false
+      },addComment(){
+        if (this.commentStar==-1){
+          this.hitComment=true
+          this.commentMessage='请输入星级'
+          return
+        }
+        if(this.commentStr==''){
+          this.hitComment=true
+          this.commentMessage='请输入评价'
+          return
+        }
+        this.$http.post('/test',{'buyId':this.commentId,'commentStar':this.commentStar,'commentStr':this.commentStr}).then((res) => {
+          if(res.data.msg=='ok'){
+          alter('评价成功！')
+          this.operateCommentWindow()
+        }else{
+          this.hitComment=true
+          this.commentMessage=res.data.msg
+        }}, (err) => {
+          this.hitComment=true
+          this.commentMessage=err
+        })
+      },changeCommentStar(val){
+        this.commentStar=val
+      },rountToShopCar(){
+        this.$router.push({path: '/shopCar'})
+      },rountToAlreadyBuy(){
+        this.$router.push({path: '/alreadyBuy'})
       }
     }
   }
@@ -363,5 +483,14 @@
   .g-form-error {
     color: red;
     padding-left: 15px;
+  }
+
+  .buttonStyle{
+    background: #4FC08D;
+    color: #FFFFFF;
+    padding: 5px;
+    cursor: pointer;
+    font-size:20px;
+    margin-right:30px;
   }
 </style>
