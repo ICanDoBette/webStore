@@ -397,9 +397,9 @@
   </update>
 
   <select id="getAlreadyBuyModelsByUserId" resultType="com.zdj.web.model.AlreadyBuyModel">
-    SELECT alreadybuy.id AS id , alreadybuy.createTime AS createTime , alreadybuy.good_count AS counts ,
+    SELECT alreadybuy.id AS id , alreadybuy.create_time AS createTime , alreadybuy.good_count AS counts ,
     alreadybuy.pay AS pay , alreadybuy.state AS state , goods.picture_path AS picturePath ,
-    goods.name AS name , CONCAT('收货地址:',address.addres,'  收件人:',address.name,'  联系电话:',CAST(addres.tel AS CHAR)) AS address
+    goods.name AS name , CONCAT('收货地址:',address.addres,'  收件人:',address.name,'  联系电话:',CAST(address.tel AS CHAR)) AS address
     FROM
     alreadybuy , goods , address
     WHERE

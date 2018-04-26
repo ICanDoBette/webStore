@@ -6,57 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c585955-2665-4d52-858b-530c52106e07" name="Default" comment="fix some front&#10;done seven interface&#10;remain five">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/AfterSaleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BankController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/enums/BuyStateEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/exception/PayException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddAddressRequestModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddressModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/AlreadyBuyModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/CommonResponseModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/PayModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/ShopCarModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay101.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1101.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1201.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay201.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay301.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay401.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay501.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay601.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/PayInterFace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/AfterSaleSrevice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/BankService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/AfterSaleSreviceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BankServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/utils/StringToIdsUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/AddressMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/AddressMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/ShopcarMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/ShopcarMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AddressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AddressMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AlreadybuyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AlreadybuyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/ShopcarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/ShopcarMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/TypeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/BankModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/BuyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/BuyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml" afterDir="false" />
+    <list default="true" id="2c585955-2665-4d52-858b-530c52106e07" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/bankChooser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/bankChooser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/layout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/alreadyBuy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/alreadyBuy.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/user.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -147,20 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddressMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="459" column="43" selection-start-line="459" selection-start-column="43" selection-end-line="459" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AlreadybuyMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="403" column="32" selection-start-line="403" selection-start-column="32" selection-end-line="403" selection-end-column="32" />
+            <state relative-caret-position="259">
+              <caret line="401" column="99" selection-start-line="401" selection-start-column="99" selection-end-line="401" selection-end-column="99" />
             </state>
           </provider>
         </entry>
@@ -168,8 +111,8 @@
       <file leaf-file-name="ShopcarMapper.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="354" column="20" selection-start-line="354" selection-start-column="20" selection-end-line="354" selection-end-column="20" />
+            <state relative-caret-position="185">
+              <caret line="352" column="6" selection-start-line="352" selection-start-column="6" selection-end-line="357" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -629,7 +572,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AddressMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/ShopcarMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/ShopCarModel.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/utils/StringToIds.java" />
@@ -656,6 +598,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml" />
       </list>
     </option>
   </component>
@@ -1257,7 +1200,7 @@
       <workItem from="1524483671187" duration="2166000" />
       <workItem from="1524547913462" duration="16598000" />
       <workItem from="1524619080288" duration="23591000" />
-      <workItem from="1524707091125" duration="31131000" />
+      <workItem from="1524707091125" duration="31399000" />
     </task>
     <task id="LOCAL-00001" summary="delete main">
       <created>1523846106364</created>
@@ -1308,14 +1251,22 @@
       <option name="project" value="LOCAL" />
       <updated>1524651268121</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix some front&#10;done seven interface&#10;remain five">
+      <created>1524761833918</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1524761833918</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="457828000" />
+    <option name="totallyTimeSpent" value="458096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.28744328" side_tool="true" weight="0.45424837" />
@@ -1436,7 +1387,8 @@
     <MESSAGE value="Merge remote-tracking branch 'remotes/origin/sprint180117_addBuyTools'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/4.0/fileHashes/fileHashes.bin&#10;#&#9;.gradle/4.0/fileHashes/fileHashes.lock&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge remote-tracking branch 'remotes/origin/sprint180117_addBuyTools'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/4.0/fileHashes/fileHashes.bin&#10;#&#9;.gradle/4.0/fileHashes/fileHashes.lock&#10;#&#9;.idea/workspace.xml&#10;rebuild ddl" />
     <MESSAGE value="final repair dll&#10;delete old front_view&#10;delete useless model&#10;finish front_view" />
-    <option name="LAST_COMMIT_MESSAGE" value="final repair dll&#10;delete old front_view&#10;delete useless model&#10;finish front_view" />
+    <MESSAGE value="fix some front&#10;done seven interface&#10;remain five" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some front&#10;done seven interface&#10;remain five" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1999,13 +1951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -2013,17 +1958,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="403" column="32" selection-start-line="403" selection-start-column="32" selection-end-line="403" selection-end-column="32" />
+        <state relative-caret-position="259">
+          <caret line="401" column="99" selection-start-line="401" selection-start-column="99" selection-end-line="401" selection-end-column="99" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="354" column="20" selection-start-line="354" selection-start-column="20" selection-end-line="354" selection-end-column="20" />
+        <state relative-caret-position="185">
+          <caret line="352" column="6" selection-start-line="352" selection-start-column="6" selection-end-line="357" selection-end-column="33" />
         </state>
       </provider>
     </entry>

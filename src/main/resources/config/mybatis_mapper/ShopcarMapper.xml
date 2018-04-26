@@ -350,7 +350,7 @@
   </update>
 
   <select id="getShopCarByUserIdAndId"  resultType="com.zdj.web.model.ShopCarModel">
-      SELECT shopcar.id AS id , shopcar.good_count AS counts , update_time AS updateTime ,
+      SELECT shopcar.id AS id , shopcar.good_count AS counts , shopcar.update_time AS updateTime ,
       goods.picture_path AS picturePath , goods.name AS name , goods.price AS price,
       goods.count+shopcar.good_count AS allCount
       FROM shopcar , goods
