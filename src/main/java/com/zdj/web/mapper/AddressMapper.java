@@ -1,5 +1,7 @@
 package com.zdj.web.mapper;
 
+import com.zdj.web.model.AddressModel;
+import com.zdj.web.model.ShopCarModel;
 import com.zdj.web.pojo.Address;
 import com.zdj.web.pojo.AddressExample;
 import java.util.List;
@@ -119,4 +121,6 @@ public interface AddressMapper {
      * @mbg.generated Wed Apr 25 18:08:55 CST 2018
      */
     int updateByPrimaryKey(Address record);
+
+    List<AddressModel> getAddressesByUserId(@Param("userId") Integer userId);
 }

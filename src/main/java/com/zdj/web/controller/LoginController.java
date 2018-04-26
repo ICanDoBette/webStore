@@ -1,11 +1,9 @@
 package com.zdj.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zdj.web.mapper.AddressMapper;
 import com.zdj.web.mapper.UserMapper;
 import com.zdj.web.model.LoginModel;
 import com.zdj.web.model.RegistModel;
-import com.zdj.web.pojo.Address;
 import com.zdj.web.pojo.User;
 import com.zdj.web.pojo.UserExample;
 import com.zdj.web.service.RedisServer;

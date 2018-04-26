@@ -33,7 +33,7 @@
 
   export default {
     created: function () {
-      this.$http.post('/test').then((res) => {
+      this.$http.post('/user/getAddresses').then((res) => {
         this.id=res.data.id
         this.name=res.data.name
         this.tel=res.data.tel

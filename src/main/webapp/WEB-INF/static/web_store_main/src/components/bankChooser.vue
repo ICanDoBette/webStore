@@ -16,7 +16,7 @@
 <script>
 export default {
   created: function () {
-    this.$http.post('/test').then((res) => {
+    this.$http.post('/bank/getBank').then((res) => {
       this.bigBanks=res.data
   }, (err) => {
       console.log(err)

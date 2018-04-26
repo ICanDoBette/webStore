@@ -93,12 +93,12 @@
   export default {
     created: function () {
       this.payThings=this.$route.params.val
-      this.$http.post('/test').then((res) => {
+      this.$http.post('/user/getAddresses').then((res) => {
         this.addresses=res.data
     }, (err) => {
         console.log(err)
       })
-      this.$http.post('/test',{'id':this.payThings}).then((res) => {
+      this.$http.post('/user/getShopCar',{'id':this.payThings}).then((res) => {
         this.shopCars=res.data
     }, (err) => {
         console.log(err)
@@ -132,8 +132,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }, {
@@ -142,8 +140,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }, {
@@ -152,8 +148,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }, {
@@ -162,8 +156,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }, {
@@ -172,8 +164,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }
@@ -193,7 +183,7 @@
           this.$emit('onOperateChrild','请选择或新增收货地址',true)
           return;
         }
-        this.$http.post('/test',{'id':this.payThings,'payWay':this.bankId,'address':this.selectAddress}).then((res) => {
+        this.$http.post('/buy/pay',{'id':this.payThings,'payWay':this.bankId,'address':this.selectAddress}).then((res) => {
           if(res.data.msg!='ok'){
           this.$emit('onOperateChrild','付款失败!'+res.data.msg,true)
         }else{

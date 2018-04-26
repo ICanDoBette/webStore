@@ -71,7 +71,7 @@
         </div>
         <div class="carDetail" style="width:100px; padding-right:20px;">
           <center>
-            <img @click="commentBuy(item.id)" v-if="item.state=='交易完成'" style="margin-top:25px; cursor:pointer" :src="commentPictuerURL"/>
+            <img @click="commentBuy(item.id)" v-if="item.state=='交易完成'||item.state=='申请售后'" style="margin-top:25px; cursor:pointer" :src="commentPictuerURL"/>
             <span v-else>收货后可评论</span>
           </center>
         </div>
@@ -86,7 +86,11 @@
 <script>
   export default {
     created: function () {
-
+      this.$http.post('/afterSale/getAlreadyBuy').then((res) => {
+        this.alreadyBuy=res.data
+    }, (err) => {
+        console.log(err)
+      })
     }, data() {
       return {
         commentPictuerURL:require('../assets/comment.png'),

@@ -395,4 +395,19 @@
       is_delete = #{isDelete,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getAlreadyBuyModelsByUserId" resultType="com.zdj.web.model.AlreadyBuyModel">
+    SELECT alreadybuy.id AS id , alreadybuy.createTime AS createTime , alreadybuy.good_count AS counts ,
+    alreadybuy.pay AS pay , alreadybuy.state AS state , goods.picture_path AS picturePath ,
+    goods.name AS name , CONCAT('收货地址:',address.addres,'  收件人:',address.name,'  联系电话:',CAST(addres.tel AS CHAR)) AS address
+    FROM
+    alreadybuy , goods , address
+    WHERE
+    alreadybuy.is_delete = 0 AND
+    alreadybuy.user_id = #{userId,jdbcType=INTEGER} AND
+    alreadybuy.good_id = goods.id AND
+    alreadybuy.address_id = address.id
+    ORDER BY
+    alreadybuy.id DESC
+  </select>
 </mapper>

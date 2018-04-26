@@ -248,7 +248,7 @@
           this.addressMessage='请输入收货人姓名'
           return
         }
-        this.$http.post('/test',{'addreess':this.addreess,'addressTel':this.addressTel,'name':this.addressName}).then((res) => {
+        this.$http.post('/user/addAddress',{'addreess':this.addreess,'addressTel':this.addressTel,'name':this.addressName}).then((res) => {
           if(res.data.msg=='ok'){
           this.$refs.chrildComponenet.getAddress()
           this.operateAddressWindow()
@@ -279,7 +279,7 @@
           this.commentMessage='请输入评价'
           return
         }
-        this.$http.post('/test',{'buyId':this.commentId,'commentStar':this.commentStar,'commentStr':this.commentStr}).then((res) => {
+        this.$http.post('/afterSale/addComment',{'buyId':this.commentId,'commentStar':this.commentStar,'commentStr':this.commentStr}).then((res) => {
           if(res.data.msg=='ok'){
           alter('评价成功！')
           this.operateCommentWindow()

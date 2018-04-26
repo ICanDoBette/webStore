@@ -348,4 +348,22 @@
       is_delete = #{isDelete,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getShopCarByUserIdAndId"  resultType="com.zdj.web.model.ShopCarModel">
+      SELECT shopcar.id AS id , shopcar.good_count AS counts , update_time AS updateTime ,
+      goods.picture_path AS picturePath , goods.name AS name , goods.price AS price,
+      goods.count+shopcar.good_count AS allCount
+      FROM shopcar , goods
+      WHERE
+      shopcar.is_delete = '0' AND
+      shopcar.user_id = #{userId,jdbcType=INTEGER}
+      <if test="ids!=null and ids.size()>0">
+        AND shopcar.id IN
+        <foreach close=")" collection="ids" item="listItem" open="(" separator=",">
+        #{listItem}
+        </foreach>
+        AND
+      </if>
+      shopcar.good_id = goods.id
+  </select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.zdj.web.mapper;
 
+import com.zdj.web.model.AlreadyBuyModel;
 import com.zdj.web.pojo.Alreadybuy;
 import com.zdj.web.pojo.AlreadybuyExample;
 import java.util.List;
@@ -95,4 +96,6 @@ public interface AlreadybuyMapper {
      * @mbg.generated Wed Apr 25 18:08:55 CST 2018
      */
     int updateByPrimaryKey(Alreadybuy record);
+
+    List<AlreadyBuyModel> getAlreadyBuyModelsByUserId(@Param("userId") Integer userId);
 }

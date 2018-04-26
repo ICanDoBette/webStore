@@ -1,5 +1,6 @@
 package com.zdj.web.mapper;
 
+import com.zdj.web.model.ShopCarModel;
 import com.zdj.web.pojo.Shopcar;
 import com.zdj.web.pojo.ShopcarExample;
 import java.util.List;
@@ -95,4 +96,6 @@ public interface ShopcarMapper {
      * @mbg.generated Wed Apr 25 18:08:55 CST 2018
      */
     int updateByPrimaryKey(Shopcar record);
+
+    List<ShopCarModel> getShopCarByUserIdAndId(@Param("userId") Integer userId, @Param("ids") List<Integer> ids);
 }

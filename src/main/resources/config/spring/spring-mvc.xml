@@ -61,6 +61,8 @@
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/buy/**"/>
+            <mvc:mapping path="/user/**"/>
+            <mvc:mapping path="/afterSale/**"/>
             <bean class="com.zdj.web.interceptors.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

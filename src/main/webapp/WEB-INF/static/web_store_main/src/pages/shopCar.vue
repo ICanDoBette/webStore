@@ -4,21 +4,21 @@
     <!-- 头部开始 -->
     <div style=" width:1280px; height:142px; margin-left:30px;">
       <div style="font-size:medium; height:100px;">
-        <span style="font-size:40px;">我的购物车</span>
+        <span style="font-size:40px;margin-left: 150px;">我的购物车</span>
         <span @click="goToBuy" class="headButton">结算选中商品</span>
         <span @click="resetCar" class="headButton">清空购物车</span>
       </div>
-      <div class="header" style="width:40px;">
+      <div class="header" style="width:40px; margin-left: 150px;">
         <center>
           &nbsp;
         </center>
       </div>
-      <div class="header" style="width:340px;">
+      <div class="header" style="width:380px;">
         <center>
           宝贝
         </center>
       </div>
-      <div class="header" style="width:80px; ">
+      <div class="header" style="width:150px; ">
         <center>
           单价
         </center>
@@ -28,12 +28,7 @@
           数量
         </center>
       </div>
-      <div class="header" style="width:370px;">
-        <center>
-          收货地址
-        </center>
-      </div>
-      <div class="header" style="width:160px;">
+      <div class="header" style="width:200px;">
         <center>
           需付款
         </center>
@@ -45,7 +40,7 @@
       </div>
     </div>
     <!-- 头部结束 商品开始 -->
-    <div v-for="(item,index) in shopCars" style=" width:1280px;  margin-left:30px;">
+    <div v-for="(item,index) in shopCars" style=" width:1280px;  margin-left:30px; margin-left: 180px;">
       <div class="carTitle"><span>2018-03-12</span><span>购物车编号: {{index}}</span></div>
       <div style=" width:100%;height:90px;">
         <div class="carDetail" style="width:40px;">
@@ -58,12 +53,12 @@
             <img :src="item.picturePath" width="80px" height="80px" style="margin-top:5px;"/>
           </center>
         </div>
-        <div class="carDetail" style="width:250px;">
+        <div class="carDetail" style="width:290px;">
           <center>
             {{item.name}}
           </center>
         </div>
-        <div class="carDetail" style="width:80px;">
+        <div class="carDetail" style="width:150px;">
           <center>
             {{item.price}}
           </center>
@@ -76,12 +71,8 @@
             ></counter>
           </center>
         </div>
-        <div class="carDetail" style="width:370px;">
-          <center>
-            {{item.address}}
-          </center>
-        </div>
-        <div class="carDetail" style="width:160px;">
+
+        <div class="carDetail" style="width:200px;">
           <center>
             {{item.counts*item.price}}
           </center>
@@ -105,7 +96,7 @@
   export default {
     components: {counter},
     created: function () {
-      this.$http.post('/test').then((res) => {
+      this.$http.post('/user/getShopCar').then((res) => {
         this.shopCars=res.data
     }, (err) => {
         console.log(err)
@@ -120,8 +111,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }, {
@@ -130,8 +119,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }, {
@@ -140,8 +127,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }, {
@@ -150,8 +135,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }, {
@@ -160,8 +143,6 @@
             name: '暖宝宝',
             price: 36,
             counts: 2,
-            address: '内蒙古',
-            pay: 80,
             updateTime: '2018-09-12',
             allCount: 5
           }
@@ -224,7 +205,7 @@
   .headButton {
     float: right;
     margin-top: 60px;
-    margin-right: 49px;
+    margin-right: 120px;
     background: #4FC08D;
     color: #FFFFFF;
     padding: 8px;

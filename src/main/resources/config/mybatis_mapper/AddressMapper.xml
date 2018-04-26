@@ -455,4 +455,14 @@
       is_delete = #{isDelete,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getAddressesByUserId" resultType="com.zdj.web.model.AddressModel">
+    SELECT id AS id , CONCAT('收货地址:',address.addres,'  收件人:',address.name,'  联系电话:',CAST(tel AS CHAR)) AS address
+    FROM address
+    WHERE
+    is_delete = 0 AND
+    user_id = #{userId,jdbcType=INTEGER}
+    ORDER BY
+    id DESC
+  </select>
 </mapper>
