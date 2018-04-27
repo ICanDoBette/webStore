@@ -1,11 +1,10 @@
 package com.zdj.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zdj.web.exception.PayException;
 import com.zdj.web.model.AddShopCarModel;
+import com.zdj.web.model.ChangeShopCarCountModel;
 import com.zdj.web.model.CommonResponseModel;
 import com.zdj.web.model.PayModel;
-import com.zdj.web.pay.PayInterFace;
 import com.zdj.web.service.BuyService;
 import com.zdj.web.utils.StringToIdsUtil;
 import org.apache.commons.lang.StringUtils;
@@ -85,6 +84,55 @@ public class BuyController {
             logger.error("数据库更新异常!", e);
         }
         commonResponseModel.setMsg(result);
+        return JSONObject.toJSONString(commonResponseModel);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/changeCount", method = {RequestMethod.GET, RequestMethod.POST})
+    public String changeCount(@RequestBody Map<String, String> values, HttpSession session) {
+        CommonResponseModel commonResponseModel = new CommonResponseModel();
+        String shopCarIdStr = values.get("id");
+        String buyNumStr = values.get("buyNum");
+        if (StringUtils.isBlank(shopCarIdStr) || StringUtils.isBlank(buyNumStr)) {
+            commonResponseModel.setMsg("购物车标识或购买数量不能为空");
+            return JSONObject.toJSONString(commonResponseModel);
+        }
+        int shopCarId, buyNum;
+        try {
+            shopCarId = Integer.parseInt(shopCarIdStr);
+            buyNum = Integer.parseInt(buyNumStr);
+        } catch (NumberFormatException e) {
+            commonResponseModel.setMsg("购物车标识或购买数量必须为数字");
+            return JSONObject.toJSONString(commonResponseModel);
+        }
+        ChangeShopCarCountModel changeShopCarCountModel = new ChangeShopCarCountModel() {
+            {
+                setBuyNum(buyNum);
+                setShopCarId(shopCarId);
+                setUserId(Integer.parseInt(session.getAttribute("id").toString()));
+                setUserName((String) session.getAttribute("name"));
+            }
+        };
+        try {
+            commonResponseModel.setMsg(buyService.changeCount(changeShopCarCountModel));
+        } catch (Exception e) {
+            logger.error("更新购物车数量发生异常！", e);
+            commonResponseModel.setMsg("更新购物车数量发生异常！" + e.getMessage());
+        }
+        return JSONObject.toJSONString(commonResponseModel);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/resetCar", method = {RequestMethod.GET, RequestMethod.POST})
+    public String resetCar(HttpSession session) {
+        CommonResponseModel commonResponseModel = new CommonResponseModel();
+        try {
+            buyService.resetCar(Integer.parseInt(session.getAttribute("id").toString()));
+            commonResponseModel.setMsg("ok");
+        } catch (Exception e) {
+            logger.error("清空购物车数量发生异常！", e);
+            commonResponseModel.setMsg("清空购物车数量发生异常！" + e.getMessage());
+        }
         return JSONObject.toJSONString(commonResponseModel);
     }
 }

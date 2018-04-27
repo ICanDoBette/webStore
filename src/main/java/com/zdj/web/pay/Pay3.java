@@ -2,7 +2,7 @@ package com.zdj.web.pay;
 
 import java.util.List;
 
-public class Pay601 implements PayInterFace {
+public class Pay3 implements PayInterFace {
     @Override
     public String beforePay(List<Integer> id) {
         return "ok";

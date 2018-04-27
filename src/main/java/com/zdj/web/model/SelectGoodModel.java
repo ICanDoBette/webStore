@@ -46,4 +46,15 @@ public class SelectGoodModel {
     public void setSmallTypeValue(Integer smallTypeValue) {
         this.smallTypeValue = smallTypeValue;
     }
+
+    @Override
+    public String toString() {
+        return "SelectGoodModel{" +
+                "selectMoneyBig=" + selectMoneyBig +
+                ", selectMoneySmall=" + selectMoneySmall +
+                ", selectName='" + selectName + '\'' +
+                ", bigTypeValue=" + bigTypeValue +
+                ", smallTypeValue=" + smallTypeValue +
+                '}';
+    }
 }

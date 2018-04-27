@@ -5,6 +5,7 @@ import com.zdj.web.model.*;
 import com.zdj.web.service.GoodsService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Controller
 @RequestMapping("/goods")
@@ -20,33 +22,59 @@ public class GoodsController {
 
     @Autowired
     private GoodsService goodsService;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @ResponseBody
     @RequestMapping(value = "/boardList", method = {RequestMethod.GET, RequestMethod.POST})
     public String getBoardList() {
+        String catchStr = (String) redisTemplate.opsForValue().get("_goods_boardList");
+        if (StringUtils.isNotBlank(catchStr)) {
+            return catchStr;
+        }
         List<BoardModel> boardList = goodsService.getBoardList();
-        return JSONObject.toJSONString(boardList);
+        String result = JSONObject.toJSONString(boardList);
+        redisTemplate.opsForValue().set("_goods_boardList", result, 5, TimeUnit.HOURS);
+        return result;
     }
 
     @ResponseBody
     @RequestMapping(value = "/detail", method = {RequestMethod.GET, RequestMethod.POST})
     public String getGoodsDetail(@RequestBody Map<String, String> values) {
+        String catchStr = (String) redisTemplate.opsForValue().get("_goods_detail?" + values.get("id"));
+        if (StringUtils.isNotBlank(catchStr)) {
+            return catchStr;
+        }
         GoodDetailModel goodDetailModel = goodsService.getGoodDetail(Integer.parseInt(values.get("id")));
-        return JSONObject.toJSONString(goodDetailModel);
+        String result = JSONObject.toJSONString(goodDetailModel);
+        redisTemplate.opsForValue().set("_goods_detail?" + values.get("id"), result, 5, TimeUnit.HOURS);
+        return result;
     }
 
     @ResponseBody
     @RequestMapping(value = "/comment", method = {RequestMethod.GET, RequestMethod.POST})
     public String getGoodsComment(@RequestBody Map<String, String> values) {
+        String catchStr = (String) redisTemplate.opsForValue().get("_goods_comment?id=" + Integer.parseInt(values.get("id")));
+        if (StringUtils.isNotBlank(catchStr)) {
+            return catchStr;
+        }
         GoodCommentModel goodCommentModel = goodsService.getGoodConmment(Integer.parseInt(values.get("id")));
-        return JSONObject.toJSONString(goodCommentModel);
+        String result = JSONObject.toJSONString(goodCommentModel);
+        redisTemplate.opsForValue().set("_goods_comment?id=" + Integer.parseInt(values.get("id")), result, 5, TimeUnit.HOURS);
+        return result;
     }
 
     @ResponseBody
     @RequestMapping(value = "/type", method = {RequestMethod.GET, RequestMethod.POST})
     public String getType() {
+        String catchStr = (String) redisTemplate.opsForValue().get("_goods_type");
+        if (StringUtils.isNotBlank(catchStr)) {
+            return catchStr;
+        }
         List<TypesModel> typesModels = goodsService.getTypes();
-        return JSONObject.toJSONString(typesModels);
+        String result = JSONObject.toJSONString(typesModels);
+        redisTemplate.opsForValue().set("_goods_type", result, 5, TimeUnit.HOURS);
+        return result;
     }
 
 
@@ -74,7 +102,13 @@ public class GoodsController {
         if (StringUtils.isNotBlank(selectNameStr)) {
             selectGoodModel.setSelectName(selectNameStr);
         }
+        String catchStr = (String) redisTemplate.opsForValue().get("_goods_select?" + selectGoodModel.toString());
+        if (StringUtils.isNotBlank(catchStr)) {
+            return catchStr;
+        }
         List<SelectGoodResultModel> selectGoodResultModel = goodsService.getSelectGoods(selectGoodModel);
-        return JSONObject.toJSONString(selectGoodResultModel);
+        String result = JSONObject.toJSONString(selectGoodResultModel);
+        redisTemplate.opsForValue().set("_goods_select?" + selectGoodModel.toString(), result, 5, TimeUnit.HOURS);
+        return result;
     }
 }

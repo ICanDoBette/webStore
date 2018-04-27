@@ -126,27 +126,13 @@
         picturePath: '',
         bigType: '',
         smallType: '',
-        count: 18,
+        count: 0,
         price: '',
-        information: 'aaa<font color="red">ssdsa</font>',
+        information: '',
         buyNum: 0,
         isComment: false,
-        avg: 4,
-        comments: [
-          {
-            name: 'hello',
-            star: 3,
-            comment: '哈哈'
-          }, {
-            name: 'hello',
-            star: 3,
-            comment: '哈哈'
-          }, {
-            name: 'hello',
-            star: 4,
-            comment: '哈哈'
-          }
-        ],
+        avg: 0,
+        comments: [],
         commentHeader1: 'commentHeaderCheckBackground',
         commentHeader2: 'commentHeaderUnCheckBackground',
         Msg: '',

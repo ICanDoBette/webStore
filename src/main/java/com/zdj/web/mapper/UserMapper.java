@@ -1,8 +1,9 @@
 package com.zdj.web.mapper;
 
+import java.util.List;
+
 import com.zdj.web.pojo.User;
 import com.zdj.web.pojo.UserExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

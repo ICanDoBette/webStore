@@ -356,9 +356,9 @@
       FROM shopcar , goods
       WHERE
       shopcar.is_delete = '0' AND
-      shopcar.user_id = #{userId,jdbcType=INTEGER}
+      shopcar.user_id = #{userId,jdbcType=INTEGER} AND
       <if test="ids!=null and ids.size()>0">
-        AND shopcar.id IN
+         shopcar.id IN
         <foreach close=")" collection="ids" item="listItem" open="(" separator=",">
         #{listItem}
         </foreach>

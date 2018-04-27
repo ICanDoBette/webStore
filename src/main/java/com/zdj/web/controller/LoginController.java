@@ -6,7 +6,6 @@ import com.zdj.web.model.LoginModel;
 import com.zdj.web.model.RegistModel;
 import com.zdj.web.pojo.User;
 import com.zdj.web.pojo.UserExample;
-import com.zdj.web.service.RedisServer;
 import com.zdj.web.service.RegistService;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -27,6 +26,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Controller
 public class LoginController {
@@ -37,8 +37,18 @@ public class LoginController {
     @Autowired
     private RedisTemplate redisTemplate;
     private final static Logger logger = LoggerFactory.getLogger(LoginController.class);
-    @Autowired
-    private RedisServer redisServer;
+
+    private static final String NO_LOGIN;
+    private static final String LOGOUT;
+
+    static {
+        LoginModel loginModel = new LoginModel();
+        loginModel.setName("");
+        loginModel.setIsLogin(false);
+        loginModel.setId(-1);
+        NO_LOGIN = JSONObject.toJSONString(loginModel);
+        LOGOUT = "{\"OK\":true}";
+    }
 
     @RequestMapping("/")
     public void index(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws IOException {
@@ -84,36 +94,39 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = {RequestMethod.POST})
     @ResponseBody
-    public String login(@RequestBody Map<String,String> values, HttpSession session) {
+    public String login(@RequestBody Map<String, String> values, HttpSession session) {
         String name = values.get("name");
         String password = values.get("password");
-        LoginModel loginModel = new LoginModel();
-        if (StringUtils.isBlank(name)||StringUtils.isBlank(password)){
-            loginModel.setName("");
-            loginModel.setIsLogin(false);
-            loginModel.setId(-1);
+        if (StringUtils.isBlank(name) || StringUtils.isBlank(password)) {
             session.setAttribute("name", "");
             session.setAttribute("id", -1);
-            return JSONObject.toJSONString(loginModel);
+            return NO_LOGIN;
+        }
+        String catchStr = (String) redisTemplate.opsForValue().get("_login?name=" + name + "&id=" + "&pass=" + password);
+        if (StringUtils.isNotBlank(catchStr)) {
+            User user = JSONObject.parseObject(catchStr, User.class);
+            session.setAttribute("name", user.getName());
+            session.setAttribute("id", user.getId());
+            return catchStr;
         }
         UserExample userExample = new UserExample();
         userExample.or().andNameEqualTo(name).andPasswordEqualTo(password);
         List<User> users = userMapper.selectByExample(userExample);
-
+        LoginModel loginModel = new LoginModel();
         if (users == null || users.isEmpty()) {
-            loginModel.setName("");
-            loginModel.setIsLogin(false);
-            loginModel.setId(-1);
             session.setAttribute("name", "");
             session.setAttribute("id", -1);
+            return NO_LOGIN;
         } else {
             User user = users.get(0);
             BeanUtils.copyProperties(user, loginModel);
             loginModel.setIsLogin(true);
             session.setAttribute("name", user.getName());
             session.setAttribute("id", user.getId());
+            String result = JSONObject.toJSONString(loginModel);
+            redisTemplate.opsForValue().set("_login?name=" + name + "&id=" + "&pass=" + password, result, 5, TimeUnit.HOURS);
+            return result;
         }
-        return JSONObject.toJSONString(loginModel);
     }
 
     @RequestMapping(value = "/logout", method = {RequestMethod.GET, RequestMethod.POST})
@@ -121,25 +134,31 @@ public class LoginController {
     public String logout(HttpSession session) {
         session.setAttribute("name", "");
         session.setAttribute("id", -1);
-        return "{\"OK\":true}";
+        return LOGOUT;
     }
 
     @RequestMapping(value = "/regist", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String regist(@RequestBody Map<String,String> values, HttpSession session) {
+    public String regist(@RequestBody Map<String, String> values, HttpSession session) {
         RegistModel registModel = new RegistModel();
         LoginModel loginModel = new LoginModel();
-        String email,name,password;
-        int tel;
+        String email, name, password;
+        String tel;
         try {
             name = values.get("name").toString();
             password = values.get("password").toString();
             email = values.get("email").toString();
-            tel = Integer.parseInt(values.get("tel"));
+            tel = values.get("tel");
         } catch (NumberFormatException | NullPointerException e) {
             logger.info("参数异常:", e);
             registModel.setIsRegist(false);
             registModel.setRegistMessage("参数不正确，请检查电话是否为数字，是否有未填项");
+            registModel.setLoginModel(loginModel);
+            return JSONObject.toJSONString(registModel);
+        }
+        if ("Sys".equals(name)) {
+            registModel.setIsRegist(false);
+            registModel.setRegistMessage("Sys为系统用户，不能注册");
             registModel.setLoginModel(loginModel);
             return JSONObject.toJSONString(registModel);
         }
@@ -154,8 +173,8 @@ public class LoginController {
         user.setUpdateUser(name);
         user.setIsDelete(new Byte("0"));
         try {
-            return registService.regist(user,session);
-        }catch (Exception e){
+            return registService.regist(user, session);
+        } catch (Exception e) {
             logger.info("数据库操作异常:", e);
             registModel.setRegistMessage("系统异常，请联系管理员！");
             registModel.setLoginModel(loginModel);
@@ -167,7 +186,7 @@ public class LoginController {
     @RequestMapping(value = "/_healthCheck", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public String healthCheck() {
-        return "{\"OK\":true}";
+        return LOGOUT;
     }
 
 }

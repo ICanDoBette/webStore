@@ -1,10 +1,11 @@
 package com.zdj.web.mapper;
 
 import com.zdj.web.model.AddressModel;
-import com.zdj.web.model.ShopCarModel;
+
+import java.util.List;
+
 import com.zdj.web.pojo.Address;
 import com.zdj.web.pojo.AddressExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

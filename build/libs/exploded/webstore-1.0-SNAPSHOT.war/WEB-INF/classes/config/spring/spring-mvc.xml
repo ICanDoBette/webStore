@@ -29,6 +29,13 @@
         <!--<property name="typeAliasesPackage" value="me.jinkun.ssm.domain"/>-->
         <!-- 自动扫描mapper下的Xx.xml文件 -->
         <property name="mapperLocations" value="classpath*:config/mybatis_mapper/*Mapper.xml" />
+        <property name="configurationProperties">
+            <props>
+                <prop key="useUnicode">true</prop>
+                <prop key="characterEncoding">UTF-8</prop>
+                <prop key="zeroDateTimeBehavior">convertToNull</prop>
+            </props>
+        </property>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.zdj.web.mapper.**" />
@@ -61,6 +68,8 @@
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/buy/**"/>
+            <mvc:mapping path="/user/**"/>
+            <mvc:mapping path="/afterSale/**"/>
             <bean class="com.zdj.web.interceptors.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

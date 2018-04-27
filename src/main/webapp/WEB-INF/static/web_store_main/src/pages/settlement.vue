@@ -111,63 +111,8 @@
         payThings:[],
         bankId: -1,
         selectAddress: -1,
-        addresses: [
-          {
-            id: 1,
-            address: '上海'
-          }, {
-            id: 2,
-            address: '上海'
-          }, {
-            id: 3,
-            address: '上海'
-          }, {
-            id: 4,
-            address: '上海'
-          }
-        ], shopCars: [
-          {
-            id: 1,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }, {
-            id: 2,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }, {
-            id: 3,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }, {
-            id: 4,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }, {
-            id: 5,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }
-        ]
+        addresses: [],
+        shopCars: []
       }
     }, methods: {
       updateAddress() {

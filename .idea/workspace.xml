@@ -7,8 +7,197 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c585955-2665-4d52-858b-530c52106e07" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/ChangeShopCarCountModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/mapper/AddressMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/mapper/AddressMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/mapper/GoodsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/mapper/GoodsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/mapper/ShopcarMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/mapper/ShopcarMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/AddressExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/AddressExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/AddressExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/AddressExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/AddressExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/AddressExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/Shopcar.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/Shopcar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/ShopcarExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/ShopcarExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/ShopcarExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/ShopcarExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/ShopcarExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/ShopcarExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/UserExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/UserExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/UserExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/UserExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/UserExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/pojo/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/service/impl/RegistServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/com/zdj/web/service/impl/RegistServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/mybatis_mapper/AddressMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/mybatis_mapper/AddressMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/mybatis_mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/mybatis_mapper/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/mybatis_mapper/ShopcarMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/mybatis_mapper/ShopcarMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/mybatis_mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/mybatis_mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/classes/config/spring/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/.postcssrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/build/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/build/check-versions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/build/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/build/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/build/vue-loader.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/build/webpack.base.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/build/webpack.dev.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/build/webpack.prod.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/config/dev.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/config/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/config/prod.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/Apps.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/Apps2.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/components/A.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/components/Apple.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/components/B.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/components/C.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/components/Peer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/components/greenPeer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/components/redPeer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store/static/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/bankChooser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/bankChooser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/base/chooser.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/base/counter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/base/counter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/base/datepicker.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/base/dialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/base/dialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/base/multiplyChooser.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/base/selection.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/checkOrder.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/layout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/logForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/components/regForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/pages/detail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/pages/detail/analysis.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/pages/detail/count.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/pages/detail/forecast.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/pages/detail/publish.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/pages/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/webstore-1.0-SNAPSHOT.war/WEB-INF/static/web_store_main/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ddl.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/AddressMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/AddressMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/GoodsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/GoodsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/ShopcarMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/mapper/ShopcarMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/AddressExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/AddressExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/AddressExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/AddressExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/AddressExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/AddressExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/UserExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/UserExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/UserExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/UserExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/UserExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/pojo/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/zdj/web/service/impl/RegistServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/zdj/web/service/impl/RegistServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/config/mybatis_mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/config/mybatis_mapper/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/config/mybatis_mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/config/mybatis_mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/config/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/config/spring/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/AddressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/AddressMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/AlreadybuyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/AlreadybuyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/BanksMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/BanksMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/GoodsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/HeadgoodMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/HeadgoodMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/NewsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/NewsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/ShopcarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/ShopcarMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/TypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/TypeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/AddressMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/AddressMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/AlreadybuyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/AlreadybuyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/BanksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/BanksMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/HeadgoodMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/HeadgoodMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/NewsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/NewsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/ShopcarMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/ShopcarMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/TypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/TypeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/AddressExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/AddressExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/Alreadybuy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/Alreadybuy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/AlreadybuyExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/AlreadybuyExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/Banks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/Banks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/BanksExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/BanksExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/CommentExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/CommentExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/GoodsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/GoodsExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/GoodsWithBLOBs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/GoodsWithBLOBs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/Headgood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/Headgood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/HeadgoodExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/HeadgoodExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/NewsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/NewsExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/NewsWithBLOBs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/NewsWithBLOBs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/Shopcar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/Shopcar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/ShopcarExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/ShopcarExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/TypeExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/TypeExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zdj/web/pojo/UserExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zdj/web/pojo/UserExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/AfterSaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/AfterSaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BankController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/NewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/enums/BuyStateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/enums/BuyStateEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AddressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AddressMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/GoodsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/SelectGoodModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/model/SelectGoodModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay101.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1101.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1201.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay201.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay301.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay401.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay501.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay601.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/AddressExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/AddressExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/UserExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/UserExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/AfterSaleSrevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/AfterSaleSrevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/BuyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/BuyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/AfterSaleSreviceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/AfterSaleSreviceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/NewsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/RegistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/RegistServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis/StartupParameters.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/StartupParameters.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/GoodsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/bankChooser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/bankChooser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/base/dialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/base/dialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/layout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/alreadyBuy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/alreadyBuy.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/goods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/goods.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/select.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/user.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -47,24 +236,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pay1101.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1101.java">
+      <file leaf-file-name="BuyController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-              <folding>
-                <element signature="e#157#158#0" expanded="true" />
-                <element signature="e#184#185#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="212">
+              <caret line="116" selection-start-line="116" selection-end-line="116" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuyServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="97" column="31" lean-forward="true" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
+            <state relative-caret-position="274">
+              <caret line="114" column="25" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,65 +257,74 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuyStateEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/enums/BuyStateEnum.java">
+      <file leaf-file-name="NewsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/NewsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state relative-caret-position="281">
+              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuyController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java">
+      <file leaf-file-name="BuyServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
+            <state relative-caret-position="102">
+              <caret line="240" column="28" selection-start-line="240" selection-start-column="12" selection-end-line="240" selection-end-column="129" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml">
+      <file leaf-file-name="ChangeShopCarCountModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/ChangeShopCarCountModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+            <state relative-caret-position="44">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlreadybuyMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml">
+      <file leaf-file-name="AfterSaleController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/AfterSaleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="401" column="99" selection-start-line="401" selection-start-column="99" selection-end-line="401" selection-end-column="99" />
+            <state relative-caret-position="1118">
+              <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShopcarMapper.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml">
+      <file leaf-file-name="BankController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BankController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="352" column="6" selection-start-line="352" selection-start-column="6" selection-end-line="357" selection-end-column="33" />
+            <state relative-caret-position="-93">
+              <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settlement.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2200">
-              <caret line="195" column="7" lean-forward="true" selection-start-line="195" selection-start-column="7" selection-end-line="195" selection-end-column="7" />
+            <state relative-caret-position="369">
+              <caret line="106" column="114" selection-start-line="106" selection-start-column="106" selection-end-line="106" selection-end-column="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/interceptors/LoginInterceptor.java">
+      <file leaf-file-name="GoodsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/GoodsMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="76" />
+            <state relative-caret-position="173">
+              <caret line="123" column="16" lean-forward="true" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -148,22 +342,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>c</find>
-      <find>counter</find>
-      <find>/buy/addShopCar</find>
-      <find>buy_c</find>
-      <find>shopCar_c</find>
-      <find>v-</find>
-      <find>onOperateChrild</find>
-      <find>chri</find>
-      <find>coun</find>
-      <find>this.$ro</find>
-      <find>chooser-component</find>
-      <find>shop</find>
-      <find>301</find>
-      <find>shopCars</find>
-      <find>v-f</find>
-      <find>MyDialog</find>
       <find>state</find>
       <find>stat</find>
       <find>sta</find>
@@ -178,12 +356,30 @@
       <find>in</find>
       <find>单价</find>
       <find>/test</find>
+      <find>这不是</find>
+      <find>data()</find>
+      <find>data ()</find>
+      <find>data</find>
+      <find>tel</find>
+      <find>ConfigurationProperties</find>
+      <find>onOperateAddress</find>
+      <find>(required = false)</find>
+      <find>COUNT= COUNT+ 1</find>
+      <find>alter</find>
+      <find>Object catchStr = redisTemplate.opsForValue()</find>
+      <find>catchStr.toString()</find>
+      <find>jedisConfig</find>
+      <find>add</find>
+      <find>_user_getShopCar</find>
+      <find>/changeCount</find>
     </findStrings>
     <replaceStrings>
       <replace>comment</replace>
       <replace>:src=&quot;buyPicUrl&quot;</replace>
       <replace>src=&quot;../assets/buy.png&quot;</replace>
       <replace>/test</replace>
+      <replace>String catchStr =(String) redisTemplate.opsForValue()</replace>
+      <replace>catchStr</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -548,57 +744,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/goods.vue" />
-        <option value="$PROJECT_DIR$/ddl.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/mybatis/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/BanksMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/BankModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/BankService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BankServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BankController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddAddressRequestModel.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/bankChooser.vue" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddCommentModel.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/layout.vue" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/AfterSaleSreviceImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/CommonResponseModel.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/alreadyBuy.vue" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/AfterSaleSrevice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/AfterSaleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AlreadybuyMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/AlreadyBuyModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/AfterSaleSreviceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddressModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AddressMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/ShopcarMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/ShopCarModel.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/utils/StringToIds.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/utils/StringToIdsUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/user.vue" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/exception/PayException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/BuyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/PayInterFace.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay101.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay201.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay401.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay301.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay401.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay501.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay601.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1101.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1201.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/PayModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/enums/BuyStateEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/bankChooser.vue" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/base/dialog.vue" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/goods.vue" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/index.vue" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/select.vue" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/Address.java" />
+        <option value="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/AddressMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/AddressExample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/UserExample.java" />
+        <option value="$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/ddl.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AddressMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/UserModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/RegistServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/RegistService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/user.vue" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/NewsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/GoodsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/alreadyBuy.vue" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/enums/BuyStateEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/AfterSaleSrevice.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/layout.vue" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/model/SelectGoodModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/User.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/mybatis/StartupParameters.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/GoodsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/AfterSaleSreviceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/AfterSaleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BankController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/NewsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zdj/web/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -617,9 +813,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="870" />
+    <option name="x" value="-66" />
+    <option name="y" value="60" />
+    <option name="width" value="1062" />
     <option name="height" value="607" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -633,6 +829,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -657,14 +854,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="zdj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webStore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zdj" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webstore" type="b2602c69:ProjectViewProjectNode" />
@@ -748,6 +937,17 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="zdj" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webStore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="zdj" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="interceptors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -759,18 +959,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="zdj" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webStore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zdj" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webstore" type="b2602c69:ProjectViewProjectNode" />
@@ -794,6 +983,17 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webStore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="zdj" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webstore" type="b2602c69:ProjectViewProjectNode" />
@@ -948,30 +1148,30 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\编程\finalExam\webStore\webStore\src\main\webapp\WEB-INF\static\web_store\dist" />
+      <recent name="E:\编程\finalExam\webStore\webStore\src\main\webapp\WEB-INF\files\pictures" />
+      <recent name="E:\编程\finalExam\webStore\webStore\src\main\webapp\WEB-INF\static\web_store_main\src\assets" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zdj.web.pay" />
+      <recent name="com.zdj.web.pojo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\编程\finalExam\webStore\webStore\src\main\java\com\zdj\web\pojo" />
       <recent name="E:\编程\finalExam\webStore\webStore\src\main\java\com\zdj\web\mapper" />
       <recent name="E:\编程\finalExam\webStore\webStore\src\main\resources\config\mybatis_mapper" />
       <recent name="E:\编程\finalExam\webStore\webStore\src\main\webapp\WEB-INF\static\web_store_main\src\components\base" />
       <recent name="E:\编程\finalExam\webStore\webStore\src\main\webapp\WEB-INF\static\web_store_main\src\pages" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.zdj.web.pay" />
-      <recent name="com.zdj.web.pojo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\编程\finalExam\webStore\webStore\src\main\webapp\WEB-INF\static\web_store\dist" />
-      <recent name="E:\编程\finalExam\webStore\webStore\src\main\webapp\WEB-INF\files\pictures" />
-      <recent name="E:\编程\finalExam\webStore\webStore\src\main\webapp\WEB-INF\static\web_store_main\src\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -986,7 +1186,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BankServiceImpl">
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration name="BankServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zdj.web.service.impl.BankServiceImpl" />
       <module name="webstore_main" />
@@ -1005,6 +1205,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.zdj.web.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="UserController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zdj.web.controller.UserController" />
+      <module name="webstore_main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zdj.web.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1128,11 +1339,13 @@
       <item itemvalue="Tomcat Server.Unnamed" />
       <item itemvalue="Application.MybatisGenerator" />
       <item itemvalue="Application.BankServiceImpl" />
+      <item itemvalue="Application.UserController" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BankServiceImpl" />
+        <item itemvalue="Application.UserController" />
         <item itemvalue="Application.MybatisGenerator" />
+        <item itemvalue="Application.BankServiceImpl" />
       </list>
     </recent_temporary>
   </component>
@@ -1200,7 +1413,8 @@
       <workItem from="1524483671187" duration="2166000" />
       <workItem from="1524547913462" duration="16598000" />
       <workItem from="1524619080288" duration="23591000" />
-      <workItem from="1524707091125" duration="31399000" />
+      <workItem from="1524707091125" duration="31629000" />
+      <workItem from="1524799173946" duration="43101000" />
     </task>
     <task id="LOCAL-00001" summary="delete main">
       <created>1523846106364</created>
@@ -1258,15 +1472,21 @@
       <option name="project" value="LOCAL" />
       <updated>1524761833918</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix bugs">
+      <created>1524762211584</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1524762211584</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="458096000" />
+    <option name="totallyTimeSpent" value="501427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.28744328" side_tool="true" weight="0.45424837" />
@@ -1280,16 +1500,16 @@
       <window_info anchor="right" id="JSF" order="6" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7125567" weight="0.45335516" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.7125567" visible="true" weight="0.4091653" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49394855" weight="0.32843137" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.48487142" weight="0.33878887" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="bottom" id="Java Enterprise" order="9" sideWeight="0.4969743" weight="0.32733223" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.38952535" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" sideWeight="0.4969743" weight="0.32569557" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3878887" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48720682" weight="0.3535188" />
       <window_info anchor="bottom" id="Spring" order="11" sideWeight="0.49394855" weight="0.32569557" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.6331316" weight="0.49099836" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.290469" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.6331316" weight="0.3797054" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29500756" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
@@ -1319,7 +1539,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.6331316" weight="0.49099836" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.6331316" weight="0.3797054" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="11" />
       <window_info anchor="right" id="JSF" order="6" />
@@ -1328,13 +1548,13 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49394855" weight="0.32843137" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Java Enterprise" order="9" sideWeight="0.4969743" weight="0.32733223" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" sideWeight="0.4969743" weight="0.32569557" />
       <window_info anchor="bottom" id="Build" order="12" sideWeight="0.49707174" weight="0.2992126" />
       <window_info anchor="bottom" id="Database Changes" order="16" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.38952535" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3878887" />
       <window_info anchor="right" id="Maven Projects" order="10" />
       <window_info anchor="right" id="Gradle" order="9" weight="0.22390318" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2912254" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29500756" />
       <window_info anchor="right" id="Database" order="5" weight="0.329429" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="4" side_tool="true" />
@@ -1345,7 +1565,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="right" id="Bean Validation" order="8" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7125567" visible="true" weight="0.45335516" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7125567" visible="true" weight="0.39443535" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1388,16 +1608,26 @@
     <MESSAGE value="Merge remote-tracking branch 'remotes/origin/sprint180117_addBuyTools'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/4.0/fileHashes/fileHashes.bin&#10;#&#9;.gradle/4.0/fileHashes/fileHashes.lock&#10;#&#9;.idea/workspace.xml&#10;rebuild ddl" />
     <MESSAGE value="final repair dll&#10;delete old front_view&#10;delete useless model&#10;finish front_view" />
     <MESSAGE value="fix some front&#10;done seven interface&#10;remain five" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix some front&#10;done seven interface&#10;remain five" />
+    <MESSAGE value="fix bug" />
+    <MESSAGE value="fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java</url>
+          <line>240</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager>
-      <configuration name="Application">
-        <watch expression="banks.size() / 4;" language="JAVA" />
-        <watch expression="i * 4 + j" language="JAVA" />
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="redisTemplate.opsForValue().get(&quot;/news/getBigNews&quot;)" language="JAVA" />
+        <watch expression="redisTemplate.delete(redisTemplate.keys(&quot;_user_getShopCar\\?userId=&quot; + 1 + &quot;*&quot;))" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -1408,285 +1638,114 @@
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>i * 4 + j</expression-string>
+        <expression-string>redisTemplate.delete(redisTemplate.keys(&quot;_user_getShopCar\\?userId=&quot; + 1 + &quot;*&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>banks.size() / 4;</expression-string>
+        <expression-string>redisTemplate.delete(redisTemplate.keys(&quot;_user_getShopCar\\?userId=&quot; + 1 + &quot;&quot;))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>redisTemplate.delete(redisTemplate.keys(&quot;_user_getShopCar\\?userId=&quot; + changeShopCarCountModel.getUserId() + &quot;&quot;))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>redisTemplate.delete(redisTemplate.keys(&quot;^[_user_getShopCar\\?userId=&quot; + changeShopCarCountModel.getUserId() + &quot;]*&quot;))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>redisTemplate.opsForValue().get(&quot;/news/getBigNews&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Integer.parseInt(&quot;18797875&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Integer.parseInt(&quot;18797818175&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>addressTelTemp</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Integer.parseInt(addressTelTemp)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i * 4 + j</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>redisTemplate.opsForValue().get(&quot;/news/getBigNews&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BankController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/RegistServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="176">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddCommentModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/BankService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="132">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding>
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/TypesModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/NewsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/CommonResponseModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="197">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
-            <element signature="e#115#116#0" expanded="true" />
-            <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#179#180#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/layout.vue">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/RedisServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="285" column="14" lean-forward="true" selection-start-line="285" selection-start-column="14" selection-end-line="285" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddAddressRequestModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="110">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#216#217#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/BankModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/RegistService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/AfterSaleSrevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/AlreadyBuyModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1009#1010#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1216#1217#0" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1348#1349#0" expanded="true" />
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1412#1413#0" expanded="true" />
-            <element signature="e#1442#1443#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1586#1587#0" expanded="true" />
-            <element signature="e#1628#1629#0" expanded="true" />
-            <element signature="e#1662#1663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zdj/web/mapper/mapperxml/AddressMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="439" column="2" selection-start-line="439" selection-start-column="2" selection-end-line="439" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AlreadybuyMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar!/org/apache/commons/lang/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="251" column="36" selection-start-line="251" selection-start-column="33" selection-end-line="251" selection-end-column="36" />
-          <folding>
-            <element signature="e#9637#9638#0" expanded="true" />
-            <element signature="e#9685#9686#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddressModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#128#129#0" expanded="true" />
-            <element signature="e#153#154#0" expanded="true" />
-            <element signature="e#186#187#0" expanded="true" />
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/AddressMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="124" column="77" selection-start-line="124" selection-start-column="77" selection-end-line="124" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/alreadyBuy.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-512">
-          <caret line="58" column="22" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="154" column="32" lean-forward="true" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/ShopCarModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#484#485#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-            <element signature="e#994#995#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1372#1373#0" expanded="true" />
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1466#1467#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1533#1534#0" expanded="true" />
-            <element signature="e#1582#1583#0" expanded="true" />
-            <element signature="e#1622#1623#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1695,76 +1754,254 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/utils/StringToIdsUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="-16">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state relative-caret-position="30">
+          <caret line="364" column="11" selection-start-line="364" selection-start-column="11" selection-end-line="364" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/GoodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2788">
+          <caret line="514" column="23" selection-start-line="514" selection-start-column="23" selection-end-line="514" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/shopCar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="124" column="47" selection-start-line="124" selection-start-column="47" selection-end-line="124" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/news.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/alreadyBuy.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1452">
+          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/enums/BuyStateEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/AlreadyBuyModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+          <folding>
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/SelectGoodModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/user.vue">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/layout.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="40" column="21" lean-forward="true" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/ShopcarMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/AfterSaleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+        <state relative-caret-position="154">
+          <caret line="496" column="12" selection-start-line="496" selection-start-column="12" selection-end-line="496" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#my-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#my-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#my-dialog#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#my-dialog#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#my-dialog#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#my-dialog#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#my-dialog#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#my-dialog#3;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#my-dialog#3;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#my-dialog#3;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/components/bankChooser.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/select.vue">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis/gradle.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/exception/InputException.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.1.6.RELEASE/38eefb4626db79c8939b58da803476864028f9d0/spring-web-4.1.6.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="5" selection-end-column="5" />
+        <state relative-caret-position="106">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/exception/PayException.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-pool2/2.4.2/2c9dcae4975caff05a627b99fae76e6fef2a3a0e/commons-pool2-2.4.2-sources.jar!/org/apache/commons/pool2/impl/BaseObjectPoolConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        <state relative-caret-position="128">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BankServiceImpl.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-pool2/2.4.2/2c9dcae4975caff05a627b99fae76e6fef2a3a0e/commons-pool2-2.4.2-sources.jar!/org/apache/commons/pool2/impl/GenericObjectPoolConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="58" lean-forward="true" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+        <state relative-caret-position="66">
+          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/redis.clients/jedis/2.9.0/6d75e2498cd82c02665df5f9d7a77d0b5e398157/jedis-2.9.0-sources.jar!/redis/clients/jedis/JedisPoolConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar!/org/apache/commons/lang/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="247" column="34" selection-start-line="247" selection-start-column="30" selection-end-line="247" selection-end-column="34" />
+          <folding>
+            <element signature="e#9637#9638#0" expanded="true" />
+            <element signature="e#9685#9686#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="77" column="71" selection-start-line="77" selection-start-column="71" selection-end-line="77" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis/StartupParameters.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/GoodsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/GoodsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="39" column="64" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/CommentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/CommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="370" column="31" lean-forward="true" selection-start-line="370" selection-start-column="31" selection-end-line="370" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/goods.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="844">
+          <caret line="175" column="42" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1782" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/1.7.1.RELEASE/6e3a5d8848e3220b9bd994b402b6dba50ef3861d/spring-data-redis-1.7.1.RELEASE-sources.jar!/org/springframework/data/redis/core/DefaultValueOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/1.7.1.RELEASE/6e3a5d8848e3220b9bd994b402b6dba50ef3861d/spring-data-redis-1.7.1.RELEASE-sources.jar!/org/springframework/data/redis/core/ValueOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/AfterSaleSrevice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1773,211 +2010,141 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/AfterSaleSreviceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" selection-start-line="24" selection-end-line="24" selection-end-column="93" />
+        <state relative-caret-position="220">
+          <caret line="25" selection-start-line="25" selection-end-line="26" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/AddShopCarModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/BuyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pojo/Alreadybuy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/PayInterFace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay201.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay301.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay401.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay501.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay601.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1201.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#157#158#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay101.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" selection-start-line="10" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/PayModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding>
-            <element signature="e#294#295#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/interceptors/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/enums/BuyStateEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/pay/Pay1101.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#157#158#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/web_store_main/src/pages/settlement.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2200">
-          <caret line="195" column="7" lean-forward="true" selection-start-line="195" selection-start-column="7" selection-end-line="195" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="97" column="31" lean-forward="true" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
+        <state relative-caret-position="302">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/1.7.1.RELEASE/6e3a5d8848e3220b9bd994b402b6dba50ef3861d/spring-data-redis-1.7.1.RELEASE-sources.jar!/org/springframework/data/redis/core/RedisOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/GoodsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="42" column="75" selection-start-line="42" selection-start-column="75" selection-end-line="42" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="114" column="25" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/NewsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/mapper/GoodsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="123" column="16" lean-forward="true" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="106" column="114" selection-start-line="106" selection-start-column="106" selection-end-line="106" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/AfterSaleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1118">
+          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/model/ChangeShopCarCountModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BankController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/controller/BuyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
+        <state relative-caret-position="212">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AddressMapper.xml">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/1.7.1.RELEASE/6e3a5d8848e3220b9bd994b402b6dba50ef3861d/spring-data-redis-1.7.1.RELEASE-sources.jar!/org/springframework/data/redis/core/RedisTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="459" column="43" selection-start-line="459" selection-start-column="43" selection-end-line="459" selection-end-column="43" />
+        <state relative-caret-position="90">
+          <caret line="608" column="16" selection-start-line="608" selection-start-column="16" selection-end-line="608" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zdj/web/service/impl/BuyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+        <state relative-caret-position="102">
+          <caret line="240" column="28" selection-start-line="240" selection-start-column="12" selection-end-line="240" selection-end-column="129" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/AlreadybuyMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="401" column="99" selection-start-line="401" selection-start-column="99" selection-end-line="401" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis_mapper/ShopcarMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="352" column="6" selection-start-line="352" selection-start-column="6" selection-end-line="357" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -2,20 +2,24 @@
   <div id="app">
     <div class="app-head">
       <div class="app-head-inner">
-        <img src="../assets/logo.png"/>
+        <img src="../assets/logo.png" @click="routeToIndex"/>
         <div class="head-nav">
           <ul v-if="!this.loginModel.isLogin" class="nav-list">
+            <li @click="routeToIndex">回到首页</li>
+            <li class="nav-pile">|</li>
             <li @click="operateLoginWindow">登录</li>
             <li class="nav-pile">|</li>
             <li @click="operateRegistWindow">注册</li>
           </ul>
           <ul v-else class="nav-list">
             <li>你好！{{this.loginModel.name}}</li>
-            <li @click="operateLoginWindow">&nbsp;&nbsp;&nbsp;个人中心</li>
+            <li @click="rountToUser">&nbsp;&nbsp;&nbsp;个人中心</li>
             <li class="nav-pile">|</li>
             <li @click="rountToShopCar">购物车</li>
             <li class="nav-pile">|</li>
             <li @click="rountToAlreadyBuy">已买到的宝贝</li>
+            <li class="nav-pile">|</li>
+            <li @click="routeToIndex">回到首页</li>
             <li class="nav-pile">|</li>
             <li @click="logout">退出登录</li>
           </ul>
@@ -24,7 +28,7 @@
     </div>
     <div class="app-content">
       <keep-alive>
-        <router-view ref="chrildComponenet" v-if="$route.meta.keepAlive" @onOperateChrild="operateChrild" @onOperateAddress="operateAddress" :isLogin="loginModel.isLogin"></router-view>
+        <router-view ref="chrildComponenet" v-if="$route.meta.keepAlive" @onOperateUserName="operateUserName" @onOperateChrild="operateChrild" @onOperateAddress="operateAddress" :isLogin="loginModel.isLogin"></router-view>
       </keep-alive>
       <router-view ref="chrildComponenet" v-if="!$route.meta.keepAlive" @onComment="operateComment" @onOperateChrild="operateChrild" :isLogin="loginModel.isLogin"></router-view>
     </div>
@@ -32,10 +36,10 @@
       <p>© 2016 fishenal MIT</p>
     </div>
     <my-dialog :isShow="isShowLogin" @on-close="operateLoginWindow">
-      <div>用户名:<input type="text" v-model="name"/></div>
-      <div>密码:<input type="password" v-model="password"/></div>
+      <div style="margin: 8px;font-size: 25px;">用户名:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" v-model="name"/></div>
+      <div style="margin: 8px;font-size: 25px;">密码:&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" v-model="password"/></div>
       <div>
-        <div><button @click="login">登录</button></div>
+        <div><span class="buttonStyle" @click="login">登录</span></div>
       </div>
       <div v-show="hitLogin">
         <font color="red">
@@ -44,13 +48,13 @@
       </div>
     </my-dialog>
     <my-dialog :isShow="isShowRegist" @on-close="operateRegistWindow">
-      <div>用户名:<input type="text" v-model="registName"/></div>
-      <div>密码:<input type="password" v-model="registPassword"/></div>
-      <div>请再输一次密码:<input type="password" v-model="registPasswordRe"/></div>
-      <div>电话:<input type="text" v-model="registTel"/></div>
-      <div>邮箱:<input type="text" v-model="registEmail"/></div>
+      <div style="margin: 8px;font-size: 25px;">用户名:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" v-model="registName"/></div>
+      <div style="margin: 8px;font-size: 25px;">密码:&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" v-model="registPassword"/></div>
+      <div style="margin: 8px;font-size: 25px;">请再输一次密码:&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" v-model="registPasswordRe"/></div>
+      <div style="margin: 8px;font-size: 25px;">电话:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" v-model="registTel"/></div>
+      <div style="margin: 8px;font-size: 25px;">邮箱:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" v-model="registEmail"/></div>
       <div>
-        <div><button @click="regist">注册</button></div>
+        <div><span  class="buttonStyle" @click="regist">注册</span></div>
       </div>
       <div v-show="hitRegist">
         <font color="red">
@@ -62,11 +66,11 @@
       {{ Msg }}
     </my-dialog>
     <my-dialog :isShow="isShowAddress" @on-close="operateAddressWindow">
-      <div>收货地址:<input type="text" v-model="addreess"/></div>
-      <div>收货电话:<input type="password" v-model="addressTel"/></div>
-      <div>收货人:<input type="password" v-model="addressName"/></div>
+      <div style="margin: 8px;font-size: 25px;">收货地址:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" v-model="addreess"/></div>
+      <div style="margin: 8px;font-size: 25px;">收货电话:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" v-model="addressTel"/></div>
+      <div style="margin: 8px;font-size: 25px;">收货人:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" v-model="addressName"/></div>
       <div>
-        <div><button @click="addAddress">增加</button></div>
+        <div><span @click="addAddress" class="buttonStyle">增加</span></div>
       </div>
       <div v-show="hitAddress">
         <font color="red">
@@ -126,9 +130,9 @@
         Msg:'',
         isShowChrildMsg:false,
         isShowAddress:false,
-        addreess:'abc',
-        addressTel:18797818175,
-        addressName:'abcd',
+        addreess:'',
+        addressTel:null,
+        addressName:'',
         hitAddress:false,
         addressMessage:'',
         isShowComment:false,
@@ -208,15 +212,16 @@
       },
       logout(){
         this.$http.post('/logout').then((res) => {
-          console.log(res.data.OK)
           if(res.data.OK){
             this.loginModel.id=-1
             this.loginModel.name=''
             this.loginModel.isLogin=false
             this.name=''
             this.password=''
+            this.$router.push({path: '/'})
           }
         }, (err) => {
+          console.log(err)
         })
       },operateChrild(val,isOpen){
         if (isOpen){
@@ -281,7 +286,7 @@
         }
         this.$http.post('/afterSale/addComment',{'buyId':this.commentId,'commentStar':this.commentStar,'commentStr':this.commentStr}).then((res) => {
           if(res.data.msg=='ok'){
-          alter('评价成功！')
+          alert('评价成功！')
           this.operateCommentWindow()
         }else{
           this.hitComment=true
@@ -296,6 +301,13 @@
         this.$router.push({path: '/shopCar'})
       },rountToAlreadyBuy(){
         this.$router.push({path: '/alreadyBuy'})
+      },rountToUser(){
+        this.$router.push({path: '/user'})
+      },operateUserName(val){
+        this.loginModel.name=val
+        this.name=val
+      },routeToIndex(){
+        this.$router.push({path: '/'})
       }
     }
   }
@@ -492,5 +504,6 @@
     cursor: pointer;
     font-size:20px;
     margin-right:30px;
+    margin-left: 20px;
   }
 </style>

@@ -33,40 +33,42 @@
 
   export default {
     created: function () {
-      this.$http.post('/user/getAddresses').then((res) => {
-        this.id=res.data.id
-        this.name=res.data.name
-        this.tel=res.data.tel
-        this.email=res.data.email
+      this.$http.post('/user/getUserInfo').then((res) => {
+        if(res.data.id!=-1){
+          this.id = res.data.id
+          this.name = res.data.name
+          this.tel = res.data.tel
+          this.email = res.data.email
+        }else{
+        this.$http.post('/logout').then((res) => {
+          if(res.data.OK){
+          this.loginModel.id=-1
+          this.loginModel.name=''
+          this.loginModel.isLogin=false
+          this.name=''
+          this.password=''
+        }
+      }, (err) => {
+          console.log(err)
+        })
+        this.$emit('onOperateChrild','非法用户！',true)
+        this.$router.push({path: '/'})
+        }
         }, (err) => {
         console.log(err)
       })
       this.getAddress()
     }, data() {
       return {
-        id: 0,
-        name: '面包',
-        tel: 110,
-        email: '1034065132@qq.com',
-        addresses: [
-          {
-            id: 1,
-            address: '上海'
-          }, {
-            id: 2,
-            address: '上海'
-          }, {
-            id: 3,
-            address: '上海'
-          }, {
-            id: 4,
-            address: '上海'
-          }
-        ]
+        id: -1,
+        name: '',
+        tel: -1,
+        email: '',
+        addresses: []
       }
     }, methods: {
       deleteAddress(val) {
-        this.$http.post('/test',{'id':this.addresses[val].id}).then((res) => {
+        this.$http.post('/user/deleteAddress',{'id':this.addresses[val].id}).then((res) => {
           if(res.data.msg=='ok'){
           this.addresses.splice(val, 1);
           this.$emit('onOperateChrild','删除成功',true)
@@ -78,9 +80,10 @@
         })
       },
       save() {
-        this.$http.post('/test',{'name':this.name,'tel':this.tel,'email':this.email}).then((res) => {
+        this.$http.post('/user/changeInfo',{'name':this.name,'tel':this.tel,'email':this.email}).then((res) => {
           if(res.data.msg=='ok'){
           this.$emit('onOperateChrild','修改成功',true)
+          this.$emit('onOperateUserName',this.name)
         }else{
           this.$emit('onOperateChrild',res.data.msg,true)
         }
@@ -90,7 +93,7 @@
       }, addAddress() {
         this.$emit('onOperateAddress')
       }, getAddress() {
-        this.$http.post('/test').then((res) => {
+        this.$http.post('/user/getAddresses').then((res) => {
           this.addresses=res.data
       }, (err) => {
           console.log(err)

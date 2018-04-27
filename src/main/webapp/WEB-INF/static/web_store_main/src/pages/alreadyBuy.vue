@@ -41,7 +41,7 @@
       <div style=" width:100%;height:90px;">
         <div class="carDetail" style="width:90px;">
           <center>
-            <img src="" width="80px" height="80px" style="margin-top:5px;"/>
+            <img :src="item.picturePath" width="80px" height="80px" style="margin-top:5px;"/>
           </center>
         </div>
         <div class="carDetail" style="width:250px;">
@@ -94,52 +94,13 @@
     }, data() {
       return {
         commentPictuerURL:require('../assets/comment.png'),
-        alreadyBuy: [
-          {
-            createTime: '2018-09-12',
-            id:1,
-            picturePath: '',
-            name: '暖宝宝',
-            counts: 2,
-            pay:500,
-            address:'内蒙古',
-            state:'正在配送',
-          },{
-            createTime: '2018-09-12',
-            id:2,
-            picturePath: '',
-            name: '暖宝宝',
-            counts: 2,
-            pay:500,
-            address:'内蒙古',
-            state:'正在配送',
-          },{
-            createTime: '2018-10-12',
-            id:1,
-            picturePath: '',
-            name: '暖宝宝',
-            counts: 2,
-            pay:500,
-            address:'内蒙古',
-            state:'交易完成',
-          },{
-            createTime: '2018-09-12',
-            id:1,
-            picturePath: '',
-            name: '暖宝宝',
-            counts: 2,
-            pay:500,
-            address:'内蒙古',
-            state:'正在配送',
-          }
-        ]
+        alreadyBuy: []
       }
     }, methods: {
       commentBuy(val){
         this.$emit('onComment',val)
       }
-    },
-    watch: {}
+    }
   }
 </script>
 

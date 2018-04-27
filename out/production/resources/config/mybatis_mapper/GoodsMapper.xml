@@ -506,4 +506,13 @@
       is_delete = #{isDelete,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <update id="addGoodsCountBuyId">
+    update goods
+    set
+    count = count + #{needToAddGoods,jdbcType=INTEGER},
+    update_time = NOW(),
+    update_user = 'Sys'
+    where id = #{goodId,jdbcType=INTEGER}
+  </update>
 </mapper>

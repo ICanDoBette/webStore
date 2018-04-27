@@ -27,7 +27,7 @@ public class RegistServiceImpl implements RegistService {
         UserExample userExample = new UserExample();
         userExample.or().andNameEqualTo(user.getName()).andIsDeleteEqualTo(new Byte("0"));
         long l = userMapper.countByExample(userExample);
-        if (l == 1L) {
+        if (l == 1L || "Sys".equals(user.getName())) {
             registModel.setRegistMessage("该用户名已经被注册！");
             registModel.setLoginModel(loginModel);
             registModel.setIsRegist(false);

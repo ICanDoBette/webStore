@@ -25,61 +25,7 @@ export default {
     return {
       nowIndex: -1,
       nowBigIndex: -1,
-      bigBanks:[
-        [
-      {
-        id: 201,
-        label: '招商银行',
-        name: 'zhaoshang',
-        style:'background-position: -2160px 0;'
-      },
-      {
-        id: 301,
-        label: '中国建设银行',
-        name: 'jianshe',
-        style:'background-position: -720px 0;'
-      },
-      {
-        id: 601,
-        label: '浦发银行',
-        name: 'pufa',
-        style:'background-position: -1800px 0;'
-      },
-      {
-        id: 1101,
-        label: '交通银行',
-        name: 'jiaotong',
-        style:'background-position: -3120px 0;'
-      },
-
-    ],[
-          {
-            id: 101,
-            label: '中国工商银行',
-            name: 'gongshang',
-            style:'background-position: -2640px 0;'
-          },
-          {
-            id: 401,
-            label: '中国农业银行',
-            name: 'nongye',
-            style:' background-position: -1680px 0;'
-          },
-          {
-            id: 1201,
-            label: '中国银行',
-            name: 'zhongguo',
-            style:'background-position: -2520px 0;'
-          },
-          {
-            id: 501,
-            label: '中信银行',
-            name: 'zhongxin',
-            style:' background-position: -480px 0;'
-          }
-
-    ]
-      ],
+      bigBanks:[],
 
     }
   },

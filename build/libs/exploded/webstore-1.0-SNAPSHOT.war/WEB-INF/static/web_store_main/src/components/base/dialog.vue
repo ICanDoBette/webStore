@@ -27,7 +27,6 @@ export default {
   },
   methods: {
     closeMyself () {
-      console.log("onclose")
       this.$emit('on-close')
     }
   }

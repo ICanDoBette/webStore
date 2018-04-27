@@ -11,7 +11,7 @@ public enum BuyStateEnum {
     private String words;
     private int stateNum;
 
-    public String getWordsByStae(int stateNum) {
+    public static String getWordsByStae(int stateNum) {
         for (BuyStateEnum buyStateEnum : BuyStateEnum.values()) {
             if (stateNum == buyStateEnum.getStateNum()) {
                 return buyStateEnum.getWords();

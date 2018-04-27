@@ -41,7 +41,7 @@
     </div>
     <!-- 头部结束 商品开始 -->
     <div v-for="(item,index) in shopCars" style=" width:1280px;  margin-left:30px; margin-left: 180px;">
-      <div class="carTitle"><span>2018-03-12</span><span>购物车编号: {{index}}</span></div>
+      <div class="carTitle"><span>2018-03-12</span><span>购物车编号: {{item.id}}</span></div>
       <div style=" width:100%;height:90px;">
         <div class="carDetail" style="width:40px;">
           <center>
@@ -96,62 +96,16 @@
   export default {
     components: {counter},
     created: function () {
-      this.$http.post('/user/getShopCar').then((res) => {
-        this.shopCars=res.data
-    }, (err) => {
-        console.log(err)
-      })
+      this.getShopCar()
     }, data() {
       return {
         buyPicUrl: require('../assets/buy.png'),
-        shopCars: [
-          {
-            id: 1,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }, {
-            id: 2,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }, {
-            id: 3,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }, {
-            id: 4,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }, {
-            id: 5,
-            picturePath: '',
-            name: '暖宝宝',
-            price: 36,
-            counts: 2,
-            updateTime: '2018-09-12',
-            allCount: 5
-          }
-        ],
+        shopCars: [],
         buyItem: []
       }
     }, methods: {
       changeCount(changeCountNum, index) {
-       this.$http.post('/test',{'id':this.shopCars[index].id,'buyNum':changeCountNum}).then((res) => {
+       this.$http.post('/buy/changeCount',{'id':this.shopCars[index].id,'buyNum':changeCountNum}).then((res) => {
          if(res.data.msg!='ok'){
            this.$refs.shopCar_counter[index].beNumber(this.shopCars[index].counts)
           this.$emit('onOperateChrild',res.data.msg,true)
@@ -159,20 +113,29 @@
            if(changeCountNum>0) {
              this.shopCars[index].counts = changeCountNum
            }else{
-             this.shopCars.splice(index,1);
+             this.getShopCar()
            }
         }
       }, (err) => {
           console.log(err)
           this.$refs.shopCar_counter[index].beNumber(this.shopCars[index].counts)
         })
-
       }, goToBuy() {
-        this.$router.push({path: '/settlement/' + this.buyItem});
+        if (this.buyItem.length==0){
+          this.$emit('onOperateChrild','请选择结算商品',true)
+        } else {
+          this.$router.push({path: '/settlement/' + this.buyItem});
+        }
       }, goToBuyOne(val) {
         this.$router.push({path: '/settlement/' + val});
+      }, getShopCar() {
+        this.$http.post('/user/getShopCar').then((res) => {
+          this.shopCars=res.data
+      }, (err) => {
+          console.log(err)
+        })
       }, resetCar() {
-        this.$http.post('/test').then((res) => {
+        this.$http.post('/buy/resetCar').then((res) => {
           if(res.data.msg!='ok'){
           this.$emit('onOperateChrild',res.data.msg,true)
         }else{

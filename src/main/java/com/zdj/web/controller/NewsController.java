@@ -5,7 +5,9 @@ import com.zdj.web.model.BigNewsModel;
 import com.zdj.web.model.NewsDetailModel;
 import com.zdj.web.model.SmallNewsModel;
 import com.zdj.web.service.NewsService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,32 +16,53 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Controller
 @RequestMapping("/news")
 public class NewsController {
     @Autowired
     private NewsService newsService;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @ResponseBody
     @RequestMapping(value = "/getBigNews", method = {RequestMethod.GET, RequestMethod.POST})
     public String getBigNews() {
+        String catchStr = (String) redisTemplate.opsForValue().get("_news_getBigNews");
+        if (StringUtils.isNotBlank(catchStr)) {
+            return catchStr;
+        }
         List<BigNewsModel> bigNews = newsService.getBigNews();
-        return JSONObject.toJSONString(bigNews);
+        String result = JSONObject.toJSONString(bigNews);
+        redisTemplate.opsForValue().set("_news_getBigNews", result, 5, TimeUnit.HOURS);
+        return result;
     }
 
     @ResponseBody
     @RequestMapping(value = "/getSmallNews", method = {RequestMethod.GET, RequestMethod.POST})
     public String getSmallNews() {
+        String catchStr = (String) redisTemplate.opsForValue().get("_news_getSmallNews");
+        if (StringUtils.isNotBlank(catchStr)) {
+            return catchStr;
+        }
         List<SmallNewsModel> smallNews = newsService.getSmallNews();
-        return JSONObject.toJSONString(smallNews);
+        String result = JSONObject.toJSONString(smallNews);
+        redisTemplate.opsForValue().set("_news_getSmallNews", result, 5, TimeUnit.HOURS);
+        return result;
     }
 
     @ResponseBody
     @RequestMapping(value = "/getNewsDetail", method = {RequestMethod.GET, RequestMethod.POST})
     public String getNewsDetail(@RequestBody Map<String, String> values) {
+        String catchStr = (String) redisTemplate.opsForValue().get("_news_getNewsDetail");
+        if (StringUtils.isNotBlank(catchStr)) {
+            return catchStr;
+        }
         int id = Integer.parseInt(values.get("id"));
         NewsDetailModel newsDetail = newsService.getNewsDetail(id);
-        return JSONObject.toJSONString(newsDetail);
+        String result = JSONObject.toJSONString(newsDetail);
+        redisTemplate.opsForValue().set("_news_getNewsDetail", result, 5, TimeUnit.HOURS);
+        return result;
     }
 }

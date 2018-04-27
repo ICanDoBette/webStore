@@ -120,4 +120,6 @@ public interface GoodsMapper {
      * @mbg.generated Wed Apr 18 10:45:34 CST 2018
      */
     int updateByPrimaryKey(Goods record);
+
+    int addGoodsCountBuyId(@Param("goodId") Integer goodId,@Param("needToAddGoods")  int needToAddGoods);
 }
