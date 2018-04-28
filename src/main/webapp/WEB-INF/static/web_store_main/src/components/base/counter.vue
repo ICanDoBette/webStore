@@ -59,8 +59,6 @@
     },
     watch: {
       number() {
-        //debugger
-        console.log(this.number+'   '+this.id)
         this.$emit('onChangeNum',
           this.number,
           this.id

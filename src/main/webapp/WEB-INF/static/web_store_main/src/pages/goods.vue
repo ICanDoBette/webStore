@@ -14,7 +14,7 @@
       <div style="height:55px; padding:3px;">
         <span style="color:#000033; font-size:20px; margin-top:10px; float:left">购买数量</span>
         <div style="float:left; width:130px;">&nbsp;</div>
-        <counter style="float:left;" :max="count" :min="count-count" @onChangeNum="changedBuy"
+        <counter style="float:left;" :max="count" :min="count-count" defaultNumber="0" @onChangeNum="changedBuy"
                  ref="buy_counter"></counter>
       </div>
       <div style="height:55px; padding:3px;">

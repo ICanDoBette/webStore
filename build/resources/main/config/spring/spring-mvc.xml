@@ -29,6 +29,13 @@
         <!--<property name="typeAliasesPackage" value="me.jinkun.ssm.domain"/>-->
         <!-- 自动扫描mapper下的Xx.xml文件 -->
         <property name="mapperLocations" value="classpath*:config/mybatis_mapper/*Mapper.xml" />
+        <property name="configurationProperties">
+            <props>
+                <prop key="useUnicode">true</prop>
+                <prop key="characterEncoding">UTF-8</prop>
+                <prop key="zeroDateTimeBehavior">convertToNull</prop>
+            </props>
+        </property>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.zdj.web.mapper.**" />
@@ -50,6 +57,7 @@
 
     <!-- 静态资源映射器 -->
     <mvc:resources mapping="/statics/**" location="/WEB-INF/static/web_store_main/dist/"/>
+    <mvc:resources mapping="/files/**" location="/WEB-INF/files/"/>
     <!-- 配置拦截器 -->
     <mvc:interceptors>
         <mvc:interceptor>
@@ -57,6 +65,12 @@
             <mvc:mapping path="/**" />
             <!-- 处理拦截的具体实现类 -->
             <bean class="com.zdj.web.interceptors.DefaultInterceptor" />
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/buy/**"/>
+            <mvc:mapping path="/user/**"/>
+            <mvc:mapping path="/afterSale/**"/>
+            <bean class="com.zdj.web.interceptors.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
     <!--redis-->

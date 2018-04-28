@@ -2,7 +2,7 @@
   <div id="app">
     <div class="app-head">
       <div class="app-head-inner">
-        <img src="../assets/logo.png" @click="routeToIndex"/>
+        <img src="../assets/logo.png" style="cursor: pointer;" @click="routeToIndex"/>
         <div class="head-nav">
           <ul v-if="!this.loginModel.isLogin" class="nav-list">
             <li @click="routeToIndex">回到首页</li>

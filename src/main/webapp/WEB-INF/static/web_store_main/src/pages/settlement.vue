@@ -133,7 +133,7 @@
           this.$emit('onOperateChrild','付款失败!'+res.data.msg,true)
         }else{
           this.$router.push({path: '/alreadyBuy'})
-          this.$emit('onOperateChrild','购买成功!!'+res.data.msg,true)
+          this.$emit('onOperateChrild','购买成功!!',true)
         }
       }, (err) => {
           this.$emit('onOperateChrild','付款失败!'+err,true)
