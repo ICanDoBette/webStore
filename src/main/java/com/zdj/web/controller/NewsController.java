@@ -55,14 +55,14 @@ public class NewsController {
     @ResponseBody
     @RequestMapping(value = "/getNewsDetail", method = {RequestMethod.GET, RequestMethod.POST})
     public String getNewsDetail(@RequestBody Map<String, String> values) {
-        String catchStr = (String) redisTemplate.opsForValue().get("_news_getNewsDetail");
+        int id = Integer.parseInt(values.get("id"));
+        String catchStr = (String) redisTemplate.opsForValue().get("_news_getNewsDetail?id="+id);
         if (StringUtils.isNotBlank(catchStr)) {
             return catchStr;
         }
-        int id = Integer.parseInt(values.get("id"));
         NewsDetailModel newsDetail = newsService.getNewsDetail(id);
         String result = JSONObject.toJSONString(newsDetail);
-        redisTemplate.opsForValue().set("_news_getNewsDetail", result, 5, TimeUnit.HOURS);
+        redisTemplate.opsForValue().set("_news_getNewsDetail?id="+id, result, 5, TimeUnit.HOURS);
         return result;
     }
 }
