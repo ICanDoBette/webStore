@@ -91,7 +91,7 @@ public class BuyServiceImpl implements BuyService {
                         throw new SQLException("购买异常！");
                     }
                     shopcar.setId(shopcarMapper.selectByExample(new ShopcarExample() {{
-                        or().andUserIdEqualTo(userId).andGoodIdEqualTo(goodId);
+                        or().andUserIdEqualTo(userId).andGoodIdEqualTo(goodId).andIsDeleteEqualTo(new Byte("0"));
                     }}).get(0).getId());
                 }
                 addShopCarModel.setShopCarId(shopcar.getId());
