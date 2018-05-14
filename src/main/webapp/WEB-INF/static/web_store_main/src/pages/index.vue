@@ -1,6 +1,17 @@
 <template>
   <div class="index-wrap">
     <div class="index-left">
+      <div  class="money">
+        <input type="text" v-model="selectName"/>
+        <span @click="function() {
+            if (selectName!=null&&selectName!='') {
+              $router.push({path: '/selectPage?selectName='+ selectName});
+            }else {
+              $router.push({path: '/selectPage'});
+            }
+          }"
+              :style="'background-image:url('+serchPic+');cursor: pointer;margin-top: 0px; width:26px; height:26px;'">&nbsp;</span>
+      </div>
       <div class="index-left-block">
         <h2>全部产品</h2>
         <template v-for="product in productList">
@@ -84,7 +95,9 @@
         slides:[],
         productList: [],
         newsList: [],
-        boardList: []
+        boardList: [],
+        selectName:'',
+        serchPic:require('../assets/serch.png'),
       }
     }
   }
@@ -202,4 +215,21 @@
     display: inline-block;
     width: 230px;
   }
+  .money input {
+    width:244px;
+    margin-left: 15px;
+    height: 20px;
+    float: left;
+  }
+
+  .money span {
+    height: 15px;
+    width: 15px;
+    float: left;
+  }
+  .money{
+    margin-top: 5px;
+    height: 23px;
+  }
+
 </style>

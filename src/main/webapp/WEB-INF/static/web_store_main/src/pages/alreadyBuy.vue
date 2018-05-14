@@ -51,12 +51,12 @@
         </div>
         <div class="carDetail" style="width:80px;">
           <center>
-            {{item.counts}}
+            {{item.counts}}件
           </center>
         </div>
         <div class="carDetail" style="width:160px;">
           <center>
-            {{item.pay}}
+            {{item.pay}}元
           </center>
         </div>
         <div class="carDetail" style="width:370px;">

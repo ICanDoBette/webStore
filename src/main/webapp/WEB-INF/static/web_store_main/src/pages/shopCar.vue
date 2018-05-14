@@ -60,7 +60,7 @@
         </div>
         <div class="carDetail" style="width:150px;">
           <center>
-            {{item.price}}
+            {{item.price}}元
           </center>
         </div>
         <div class="carDetail" style="width:160px;">
@@ -74,7 +74,7 @@
 
         <div class="carDetail" style="width:200px;">
           <center>
-            {{item.counts*item.price}}
+            {{item.counts*item.price}}元
           </center>
         </div>
         <div class="carDetail" style="width:60px; padding-right:20px;">

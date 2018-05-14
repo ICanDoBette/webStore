@@ -7,6 +7,7 @@ import com.zdj.web.model.RegistModel;
 import com.zdj.web.pojo.User;
 import com.zdj.web.pojo.UserExample;
 import com.zdj.web.service.RegistService;
+import com.zdj.web.utils.IdentifyUtil;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -149,10 +150,13 @@ public class LoginController {
             password = values.get("password").toString();
             email = values.get("email").toString();
             tel = values.get("tel");
+            if (!IdentifyUtil.isEmail(email)||!IdentifyUtil.isTel(tel)){
+                throw new NumberFormatException("电话或邮箱不合规");
+            }
         } catch (NumberFormatException | NullPointerException e) {
             logger.info("参数异常:", e);
             registModel.setIsRegist(false);
-            registModel.setRegistMessage("参数不正确，请检查电话是否为数字，是否有未填项");
+            registModel.setRegistMessage("参数不正确，请检查邮箱或电话是否标准，是否有未填项");
             registModel.setLoginModel(loginModel);
             return JSONObject.toJSONString(registModel);
         }

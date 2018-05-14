@@ -7,6 +7,7 @@ import com.zdj.web.model.ShopCarModel;
 import com.zdj.web.model.UserModel;
 import com.zdj.web.pojo.Address;
 import com.zdj.web.service.UserService;
+import com.zdj.web.utils.IdentifyUtil;
 import com.zdj.web.utils.StringToIdsUtil;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -43,6 +44,9 @@ public class UserController {
         CommonResponseModel commonResponseModel = new CommonResponseModel();
         if (StringUtils.isBlank(name) || StringUtils.isBlank(addreess) || StringUtils.isBlank(addressTelTemp)) {
             commonResponseModel.setMsg("地址，电话，收件人必填");
+            return JSONObject.toJSONString(commonResponseModel);
+        } else if (!IdentifyUtil.isTel(addressTelTemp)) {
+            commonResponseModel.setMsg("电话号码不正确！");
             return JSONObject.toJSONString(commonResponseModel);
         } else {
             Address address = new Address() {
@@ -168,6 +172,9 @@ public class UserController {
             return JSONObject.toJSONString(commonResponseModel);
         } else if ("Sys".equals(name)) {
             commonResponseModel.setMsg("Sys为系统用户，不能修改");
+            return JSONObject.toJSONString(commonResponseModel);
+        } else if (!IdentifyUtil.isTel(telStr) || !IdentifyUtil.isEmail(email)) {
+            commonResponseModel.setMsg("电话或邮箱不正确！");
             return JSONObject.toJSONString(commonResponseModel);
         }
         UserModel userModel = new UserModel();
